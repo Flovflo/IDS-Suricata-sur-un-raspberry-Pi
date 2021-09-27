@@ -25,7 +25,7 @@ Les avantages : les NID sont excellentes et ont la capacité de protéger d'inno
 **Pourquoi utiliser suricat :**
 
 **schéma d'installation **
-![alt text](http://url/to/img.png)
+![alt text](/Image/schema/Sans titre.png)
 
 **Raspberry Pi** : Le Raspberry Pi est un nano-ordinateur monocarte à processeur ARM qui fonctionne en 32 et 64 bits. Il fut créé pour pouvoir donner accès plus facilement aux ordinateurs. C’est très accessible dû au faible prix et aux logiciels libres. Le Raspberry Pi permet l’installation et l’exécution de plusieurs systèmes d’exploitation libre et compatible comme GNU, Linux et Debian. Il fonctionne également sur le système d’exploitation Windows 10.
 Le Raspberry Pi est fourni nu. Donc il n’y a ni boîtier, ni câble d’alimentation, de clavier, de souris, d’écran, pour diminuer les coûts.
