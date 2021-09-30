@@ -36,8 +36,18 @@ L’ IPS avertit ces incidents à l’administrateur système et prend des mesur
 Les solutions IPS peuvent en outre être utilisées pour déterminer les différents problèmes liés aux politiques de sécurité de l’entreprise pour empêcher les employés et les visiteurs de franchir les règles incluses dans les politiques.  
 
 **Quelle est la différence entre un IDS et un IPS ?**
+Lors de la recherche de solutions IPS, vous rencontrerez également des systèmes de détection d'intrusion (IDS). Avant de nous plonger dans les principes de fonctionnement de ces systèmes d'intrusion, examinons la différence entre IPS et IDS.
+
+La principale différence entre IPS et IDS réside dans l'action entreprise lorsqu'un problème potentiel est détecté.
+
+Les systèmes de prévention des intrusions contrôlent l'accès au réseau informatique et l'immunise des abus et des attaques. Ces systèmes sont créés pour observer les données intrusives et prendre des mesures pour empêcher les attaques de se produire.
+
+Les systèmes de détection d'intrusion ne sont pas conçus pour empêcher les attaques. Ils surveillent simplement le réseau et envoient des alertes à l'administrateur lorsqu'une menace potentielle est détectée.
+
+
 
 **Pourquoi utiliser suricat :**
+
 
 **Schéma d'installation**
 ![alt text](https://github.com/Flovflo/IDS-Suricata-sur-un-raspberry-Pi/blob/main/Image/schema/Sans%20titre.png)
