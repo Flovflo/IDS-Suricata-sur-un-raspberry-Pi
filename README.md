@@ -25,14 +25,11 @@ Les avantages : les NID sont excellentes et ont la capacité de protéger d'inno
 **Qu'est-ce qu'un IPS ?**  
 
 Un IPS (Système de Prévention des Intrusions) est une sécurité pour repérer et réprimer les menaces déterminés.
-
 Les IPS inspectent et surveillent constamment notre réseau, analysent des comportements douteux malveillants et prennent en compte des informations à leur sujet.
-
 L’ IPS avertit ces incidents à l’administrateur système et prend des mesures défensives, comme l'arrêt du point d’accès et la reconfiguration du pare-feu pour détourner de futures attaques.
-
 Les solutions IPS peuvent en outre être utilisées pour déterminer les différents problèmes liés aux politiques de sécurité de l’entreprise pour empêcher les employés et les visiteurs de franchir les règles incluses dans les politiques.  
 
-**Quelle est la différence entre un IDS et un IPS ?  **
+**Quelle est la différence entre un IDS et un IPS ?**
 
 **Pourquoi utiliser suricat :**
 
