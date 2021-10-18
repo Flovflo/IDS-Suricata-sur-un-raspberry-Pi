@@ -42,16 +42,12 @@ Les systèmes de prévention des intrusions contrôlent l'accès au réseau info
 Les systèmes de détection d'intrusion ne sont pas conçus pour empêcher les attaques. Ils surveillent simplement le réseau et envoient des alertes à l'administrateur lorsqu'une menace potentielle est détectée.
 
 
-
 **Pourquoi utiliser suricata :**  
 Premièrement Suricata est open source donc gratuit, il gère aussi la détection d'intrusion (IDS), la prévention d'intrusion (IPS) mais surtout il est très rapide et performant
 De plus il est assez simple à mettre en œuvre
 Et il peut s'installer sur énormément d'appareils / d'écosystèmes
 même si Suricata a des concurrents comme Zeek , Sweet Security ou Snort mais Suricata est gratuit et à une énorme communauté active donc les nouvelles informations sur les menaces sont souvent disponibles en premier dans un format compatible avec Suricata , de même si vous avez un problème il y a de fortes chances que quelqu'un d'autre a déjà eu ces problèmes et qu'il a donné la solution sur un forum sur internet.
 C'est donc pour cela que nous choisissions Suricata. 
-![image](https://user-images.githubusercontent.com/86321847/137685322-d8da8ae0-eb23-4339-8ec2-f90302775fee.png)
-
-
 
 
 **Schéma d'installation**
