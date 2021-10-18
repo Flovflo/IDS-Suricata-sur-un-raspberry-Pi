@@ -44,7 +44,7 @@ Les systèmes de détection d'intrusion ne sont pas conçus pour empêcher les a
 
 
 
-**Pourquoi utiliser suricat :**
+**Pourquoi utiliser suricata :**
 
 
 **Schéma d'installation**
