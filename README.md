@@ -69,3 +69,6 @@ Ensuite après que l’ISO est téléchargé , je l'installe sur une micro SD av
 Ensuite j insère la carte SD dans le raspberry pi et je démarre le raspberry pi , je boot bien sûr raspbian lite donc nous sommes prêts à passer à l'étape 2.
 
    <h2> 2) Installation de Suricata </h2>
+   
+   
+  ##### sudo apt install libpcre3 libpcre3-dbg libpcre3-dev build-essential libpcap-dev libyaml-0-2 libyaml-dev pkg-config zlib1g zlib1g-dev make libmagic-dev libjansson-dev rustc cargo python-yaml python3-yaml liblua5.1-dev
