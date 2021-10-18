@@ -36,7 +36,7 @@ Les IPS inspectent et surveillent constamment notre réseau, analysent des compo
 L’ IPS avertit ces incidents à l’administrateur système et prend des mesures défensives, comme l'arrêt du point d’accès et la reconfiguration du pare-feu pour détourner de futures attaques.
 Les solutions IPS peuvent en outre être utilisées pour déterminer les différents problèmes liés aux politiques de sécurité de l’entreprise pour empêcher les employés et les visiteurs de franchir les règles incluses dans les politiques.  
 
-**Quelle est la différence entre un IDS et un IPS ?**
+**Quelle est la différence entre un IDS et un IPS ?**  
 Lors de la recherche de solutions IPS, vous rencontrerez également des systèmes de détection d'intrusion (IDS). Avant de nous plonger dans les principes de fonctionnement de ces systèmes d'intrusion, examinons la différence entre IPS et IDS.
 La principale différence entre IPS et IDS réside dans l'action entreprise lorsqu'un problème potentiel est détecté.
 Les systèmes de prévention des intrusions contrôlent l'accès au réseau informatique et l'immunise des abus et des attaques. Ces systèmes sont créés pour observer les données intrusives et prendre des mesures pour empêcher les attaques de se produire.
