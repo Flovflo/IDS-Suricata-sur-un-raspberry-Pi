@@ -57,7 +57,7 @@ C'est donc pour cela que nous choisissions Suricata.
 Le Raspberry Pi est fourni nu. Donc il n’y a ni boîtier, ni câble d’alimentation, de clavier, de souris, d’écran, pour diminuer les coûts.
 
 <h1>2) Mise en Pratique  </h1>
-  <h2>1) Installation de Raspbian </h2>
+  <h2>1) Installation de Raspbian Lite </h2>
 
 Pour commencer, nous installons un OS sur le raspberry pi.
 Nous choisissons donc raspbian car c'est la distribution la plus adaptée pour raspberry pi, et nous prenons la version light car nous n'avons pas besoin d'interface graphique et aussi pour éviter de consommer de l'énergie et des ressources.
@@ -66,3 +66,6 @@ Je télécharge l'instaleur raspbian sur le site de la fondation [Raspberrry](ht
 
 Ensuite après que l’ISO est téléchargé , je l'installe sur une micro SD avec [balenaEtcher](https://www.balena.io/etcher/) .
 
+Ensuite j insère la carte SD dans le raspberry pi et je démarre le raspberry pi , je boot bien sûr raspbian lite donc nous sommes prêts à passer à l'étape 2![image](https://user-images.githubusercontent.com/86321847/137689445-be1c9224-4832-4914-8518-f174ed81906f.png)
+
+   <h2>1) Installation de Suricata </h2>
