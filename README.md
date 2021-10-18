@@ -57,4 +57,7 @@ C'est donc pour cela que nous choisissions Suricata.
 Le Raspberry Pi est fourni nu. Donc il n’y a ni boîtier, ni câble d’alimentation, de clavier, de souris, d’écran, pour diminuer les coûts.
 
 <h1>2) Mise en Pratique  </h1>
+  <h2>2) Installation de Raspbian </h2>
 
+Pour commencer, nous installons un OS sur le raspberry pi.
+Nous choisissons donc raspbian car c'est la distribution la plus adaptée pour raspberry pi, et nous prenons la version light car nous n'avons pas besoin d'interface graphique et aussi pour éviter de consommer de l'énergie et des ressources.
