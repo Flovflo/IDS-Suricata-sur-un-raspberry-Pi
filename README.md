@@ -62,5 +62,7 @@ Le Raspberry Pi est fourni nu. Donc il n’y a ni boîtier, ni câble d’alimen
 Pour commencer, nous installons un OS sur le raspberry pi.
 Nous choisissons donc raspbian car c'est la distribution la plus adaptée pour raspberry pi, et nous prenons la version light car nous n'avons pas besoin d'interface graphique et aussi pour éviter de consommer de l'énergie et des ressources.
 
-Je télécharge l'instaleur raspbian sur le site de la fondation 
-Raspberrry [Simplonline](https://raspberry-pi.fr/telechargements/)
+Je télécharge l'instaleur raspbian sur le site de la fondation [Raspberrry](https://raspberry-pi.fr/telechargements/) .  
+
+Ensuite après que l’ISO est téléchargé , je l'installe sur une micro SD avec [balenaEtcher](https://www.balena.io/etcher/) .
+
