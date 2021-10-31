@@ -41,7 +41,6 @@ Examinons donc la différence entre IPS et IDS, la principale différence entre 
 Les systèmes de prévention des intrusions contrôlent l'accès au réseau informatique et l'immunise des abus et des attaques. Ces systèmes sont créés pour observer les données intrusives et prendre des mesures pour empêcher les attaques de se produire.
 Les systèmes de détection d'intrusion ne sont pas conçus pour empêcher les attaques. Ils surveillent simplement le réseau et envoient des alertes à l'administrateur lorsqu'une menace potentielle est détectée.
 
-
 **Pourquoi utiliser suricata :**  
 Premièrement Suricata est open source donc gratuit, il gère aussi la détection d'intrusion (IDS), la prévention d'intrusion (IPS) mais surtout il est très rapide et performant
 De plus il est assez simple à mettre en œuvre
