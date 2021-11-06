@@ -67,22 +67,23 @@ Ensuite après que l’ISO est téléchargé , je l'installe sur une micro SD av
 
 Mais d'abord avant d'insérer la carte SD dans le raspberry pi, je vais créer un fichier et ssh dans le dossier boot de la carte SD pour que le SSH soit activé (pour ne pas devoir brancher un écran et un clavier au raspberry pi et devoir l'activer manuellement)
 
-![fichier ssh](https://user-images.githubusercontent.com/86321847/140617622-02c0eb09-5f9c-4476-8520-bd8eac2ce010.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/86321847/140617622-02c0eb09-5f9c-4476-8520-bd8eac2ce010.png" />
+</p>
 
 
 Je peux donc maintenant mettre la carte SD dans le raspberry pi , attendre quelques minutes qu'il démarre et aller sur l'interface d'administration de ma box pour trouver l'adresse IP assignée au raspberry pi!
 
-![image](https://user-images.githubusercontent.com/86321847/140617918-2419c910-c0e5-431e-a432-4f471c839fa0.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/86321847/140617918-2419c910-c0e5-431e-a432-4f471c839fa0.png" />
+</p>
 
 
 Le IP privé de mon raspberry pi et donc 192.168.0.23 soite mje peux maintenant lancer une connexion ssh depuis mon ordinateur pour contrôler le raspberry pi.
 
-
 <p align="center">
   <img src="https://user-images.githubusercontent.com/86321847/140617727-0470b759-7dba-4932-9914-9f724b6f6e59.png" />
 </p>
-
-
 
    <h3> 2) Accès à distance </h3>
 Pour pouvoir accéder au raspberry pi depuis l'IUT et pour la configuration et par la suite la maintenance et là supervision , il est donc important de pouvoir avoir un accès au raspberry pi mais de manière sécurisée c'est pour cela que nous avons fait un vpn WIREGUARD pour avoir de très bonnes performances tout en restant très sécurisé. 
