@@ -65,7 +65,11 @@ Je télécharge l'instaleur raspbian sur le site de la fondation [Raspberrry](ht
 
 Ensuite après que l’ISO est téléchargé , je l'installe sur une micro SD avec [balenaEtcher](https://www.balena.io/etcher/) .
 
-Ensuite j insère la carte SD dans le raspberry pi et je démarre le raspberry pi , je boot bien sûr raspbian lite donc nous sommes prêts à passer à l'étape 2.
+Mais d'abord avant d'insérer la carte SD dans le raspberry pi, je vais créer un fichier et ses h dans le dossier boot de la carte SD pour que le SSH soit activé (pour ne pas devoir brancher un écran et un clavier au raspberry pi et devoir l'activer manuellement)
+
+Je peux donc maintenant mettre la carte SD dans le raspberry pi , attendre quelques minutes qu'il démarre et lancer une connexion ssh depuis mon ordinateur pour contrôler le raspberry pi
+
+nous sommes prêts à passer à l'étape 2.
 
    <h2> 2) Installation de Suricata </h2>
    
