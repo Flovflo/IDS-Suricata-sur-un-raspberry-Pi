@@ -71,7 +71,7 @@ Mais d'abord avant d'insérer la carte SD dans le raspberry pi, je vais créer u
 
 
 Je peux donc maintenant mettre la carte SD dans le raspberry pi , attendre quelques minutes qu'il démarre et aller sur l'interface d'administration de ma box pour trouver l'adresse IP assignée au raspberry pi!
-![image](https://user-images.githubusercontent.com/86321847/140617609-49389114-8b6a-4240-8353-4016a45097f9.png)
+![image](https://user-images.githubusercontent.com/86321847/140617918-2419c910-c0e5-431e-a432-4f471c839fa0.png)
 
 
 Le IP privé de mon raspberry pi et donc 192.168.0.23 soite mje peux maintenant lancer une connexion ssh depuis mon ordinateur pour contrôler le raspberry pi.
