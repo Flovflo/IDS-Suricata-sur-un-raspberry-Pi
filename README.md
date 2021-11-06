@@ -74,7 +74,9 @@ Je peux donc maintenant mettre la carte SD dans le raspberry pi , attendre quelq
 ![image](https://user-images.githubusercontent.com/86321847/140617609-49389114-8b6a-4240-8353-4016a45097f9.png)
 
 
-Le IP privé de mon raspberry pi et donc 192.168.0. soite mje peux maintenant lancer une connexion ssh depuis mon ordinateur pour contrôler le raspberry pi.
+Le IP privé de mon raspberry pi et donc 192.168.0.23 soite mje peux maintenant lancer une connexion ssh depuis mon ordinateur pour contrôler le raspberry pi.
+![image](https://user-images.githubusercontent.com/86321847/140617727-0470b759-7dba-4932-9914-9f724b6f6e59.png)
+
 
    <h3> 2) Accès à distance </h3>
 Pour pouvoir accéder au raspberry pi depuis l'IUT et pour la configuration et par la suite la maintenance et là supervision , il est donc important de pouvoir avoir un accès au raspberry pi mais de manière sécurisée c'est pour cela que nous avons fait un vpn WIREGUARD pour avoir de très bonnes performances tout en restant très sécurisé
