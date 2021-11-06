@@ -65,13 +65,20 @@ Je télécharge l'instaleur raspbian sur le site de la fondation [Raspberrry](ht
 
 Ensuite après que l’ISO est téléchargé , je l'installe sur une micro SD avec [balenaEtcher](https://www.balena.io/etcher/) .
 
-Mais d'abord avant d'insérer la carte SD dans le raspberry pi, je vais créer un fichier et ses h dans le dossier boot de la carte SD pour que le SSH soit activé (pour ne pas devoir brancher un écran et un clavier au raspberry pi et devoir l'activer manuellement)
+Mais d'abord avant d'insérer la carte SD dans le raspberry pi, je vais créer un fichier et ssh dans le dossier boot de la carte SD pour que le SSH soit activé (pour ne pas devoir brancher un écran et un clavier au raspberry pi et devoir l'activer manuellement)
 
-Je peux donc maintenant mettre la carte SD dans le raspberry pi , attendre quelques minutes qu'il démarre et lancer une connexion ssh depuis mon ordinateur pour contrôler le raspberry pi
+![fichier ssh](https://user-images.githubusercontent.com/86321847/140617622-02c0eb09-5f9c-4476-8520-bd8eac2ce010.png)
+
+
+Je peux donc maintenant mettre la carte SD dans le raspberry pi , attendre quelques minutes qu'il démarre et aller sur l'interface d'administration de ma box pour trouver l'adresse IP assignée au raspberry pi!
+![image](https://user-images.githubusercontent.com/86321847/140617609-49389114-8b6a-4240-8353-4016a45097f9.png)
+
+
+Le IP privé de mon raspberry pi et donc 192.168.0. soite mje peux maintenant lancer une connexion ssh depuis mon ordinateur pour contrôler le raspberry pi.
 
    <h3> 2) Accès à distance </h3>
 Pour pouvoir accéder au raspberry pi depuis l'IUT et pour la configuration et par la suite la maintenance et là supervision , il est donc important de pouvoir avoir un accès au raspberry pi mais de manière sécurisée c'est pour cela que nous avons fait un vpn WIREGUARD pour avoir de très bonnes performances tout en restant très sécurisé
-![image](https://user-images.githubusercontent.com/86321847/140617366-16a7e5ca-1f2e-4879-8c2c-6d3dac2ec0c6.png)
+
 
 
 nous sommes prêts à passer à l'étape 2.
