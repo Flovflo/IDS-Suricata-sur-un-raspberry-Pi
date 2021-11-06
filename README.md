@@ -76,8 +76,10 @@ Je peux donc maintenant mettre la carte SD dans le raspberry pi , attendre quelq
 
 
 Le IP privé de mon raspberry pi et donc 192.168.0.23 soite mje peux maintenant lancer une connexion ssh depuis mon ordinateur pour contrôler le raspberry pi.
+
+
 <p align="center">
-  ![image](https://user-images.githubusercontent.com/86321847/140617727-0470b759-7dba-4932-9914-9f724b6f6e59.png)
+  <img src="https://user-images.githubusercontent.com/86321847/140617727-0470b759-7dba-4932-9914-9f724b6f6e59.png" />
 </p>
 
 
