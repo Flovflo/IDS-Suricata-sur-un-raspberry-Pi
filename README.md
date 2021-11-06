@@ -57,7 +57,7 @@ Le Raspberry Pi est fourni nu. Donc il n’y a ni boîtier, ni câble d’alimen
 
 <h1>2) Mise en Pratique  </h1>
   <h2> 1) Installation de Raspbian Lite </h2>
-
+    <h3> 1) Raspbian Lite </h3>
 Pour commencer, nous installons un OS sur le raspberry pi.
 Nous choisissons donc raspbian car c'est la distribution la plus adaptée pour raspberry pi, et nous prenons la version light car nous n'avons pas besoin d'interface graphique et aussi pour éviter de consommer de l'énergie et des ressources.
 
@@ -68,6 +68,11 @@ Ensuite après que l’ISO est téléchargé , je l'installe sur une micro SD av
 Mais d'abord avant d'insérer la carte SD dans le raspberry pi, je vais créer un fichier et ses h dans le dossier boot de la carte SD pour que le SSH soit activé (pour ne pas devoir brancher un écran et un clavier au raspberry pi et devoir l'activer manuellement)
 
 Je peux donc maintenant mettre la carte SD dans le raspberry pi , attendre quelques minutes qu'il démarre et lancer une connexion ssh depuis mon ordinateur pour contrôler le raspberry pi
+
+   <h3> 2) Accès à distance </h3>
+Pour pouvoir accéder au raspberry pi depuis l'IUT et pour la configuration et par la suite la maintenance et là supervision , il est donc important de pouvoir avoir un accès au raspberry pi mais de manière sécurisée c'est pour cela que nous avons fait un vpn WIREGUARD pour avoir de très bonnes performances tout en restant très sécurisé
+![image](https://user-images.githubusercontent.com/86321847/140617366-16a7e5ca-1f2e-4879-8c2c-6d3dac2ec0c6.png)
+
 
 nous sommes prêts à passer à l'étape 2.
 
