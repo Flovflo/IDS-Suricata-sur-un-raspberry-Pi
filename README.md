@@ -156,5 +156,16 @@ Mettre à jour les règles de suricata :
 ```
 sudo suricata-update
 ```
+<img width="773" alt="image" src="https://user-images.githubusercontent.com/86321847/140889091-68077d2a-27ea-404d-8730-af53e026805f.png">
 
 <h2> Configurer Suricata <h2/>
+ Configurer suricata en éditant le fichier suricata.yaml :
+```
+sudo vi /etc/suricata/suricata.yaml
+```
+
+Modifier la variable HOME_NET afin qu’elle contienne votre réseau local, par exemple :
+ 
+ <img width="773" alt="image" src="https://user-images.githubusercontent.com/86321847/140889530-09e0470e-b145-4850-b17b-295de73dbb45.png">
+
+
