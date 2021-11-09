@@ -176,10 +176,11 @@ Lancer suricata avec la commande suivante :
 ```
 sudo suricata -c /etc/suricata/suricata.yaml -i eth0 -S /var/lib/suricata/rules/suricata.rules
 ```
-Soit avec 
-"-c /etc/suricata/suricata.yaml" : fichier de configuration à utiliser
+Soit avec :  
 
-"-i eth0" : interface Ethernet à surveiller
+ * "-c /etc/suricata/suricata.yaml" : fichier de configuration à utiliser
 
-"-S /var/lib/suricata/rules/suricata.rules" : fichier contenant les règles à utiliser
+ * "-i eth0" : interface Ethernet à surveiller
+
+ * "-S /var/lib/suricata/rules/suricata.rules" : fichier contenant les règles à utiliser
 
