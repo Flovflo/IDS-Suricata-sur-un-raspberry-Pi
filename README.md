@@ -204,4 +204,23 @@ alert icmp any any -> any any (msg: "ICMP Packet found"; sid: 1; rev: 1;)
 Maintenant que nous avons des alertes de journalisation Suricata, concentrons-nous sur la fin de la réception. Nous devons configurer le moteur Elasticsearch qui ingérera et indexera les alertes et Kibana qui sera utilisé pour visualiser les alertes, construire de beaux écrans de tableau de bord, etc.
 Heureusement, il existe de très bonnes images Docker prêtes à l'emploi pour Elasticsearch et Kibana, utilisons-les pour économiser du temps et des efforts. Ces images sont conservées par Idriss Neumann et sont disponibles ici : https://gitlab.comwork.io/oss/elasticstack/elasticstack-arm
 
+Installer Docker :
+```
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo usermod -aG docker $USER
+```
 
+Déconnexion et reconnectez-vous au Raspberry. Ensuite, extrayez les images Docker que nous utiliserons et créez un réseau Docker pour laisser les deux conteneurs d'Elasticsearch et de Kibana parler ensemble :
+```
+docker pull comworkio/elasticsearch:latest-arm
+docker pull comworkio/kibana:latest-arm
+docker network create elastic
+```
+
+
+
+
+
+Source : https://www.reddit.com/r/raspberry_pi/comments/np1a8f/building_my_home_intrusion_detection_system/
+       : https://jufajardini.wordpress.com/2021/02/15/suricata-on-your-raspberry-pi/
