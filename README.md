@@ -95,3 +95,5 @@ Nous sommes prêts à passer à l'étape 2.
 sudo apt install libpcre3 libpcre3-dbg libpcre3-dev build-essential libpcap-dev libyaml-0-2 libyaml-dev pkg-config zlib1g zlib1g-dev make libmagic-dev libjansson-dev rustc cargo python-yaml python3-yaml liblua5.1-dev
 ```
 
+Télécharger les sources de Suricata :
+wget https://www.openinfosecfoundation.org/download/suricata-6.0.1.tar.gz
