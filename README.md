@@ -37,12 +37,7 @@ L’ IPS avertit ces incidents à l’administrateur système et prend des mesur
 Les solutions IPS peuvent en outre être utilisées pour déterminer les différents problèmes liés aux politiques de sécurité de l’entreprise pour empêcher les employés et les visiteurs de franchir les règles incluses dans les politiques.  
 
 **Quelle est la différence entre un IDS et un IPS ?**  
-Examinons donc la différence entre IPS et IDS. La principale différence entre IPS et IDS réside dans les mesures prises lorsqu'un problème potentiel est détecté. Les systèmes de prévention des intrusions contrôlent l'accès aux réseaux informatiques et les protègent des abus et des attaques. Ces systèmes ont été créés pour observer les données intrusives et prendre des mesures pour empêcher les attaques de se produire. Les systèmes de détection d'intrusion ne sont pas conçus pour empêcher les attaques. Ils surveillent simplement le réseau et envoient une alerte à l'administrateur lorsqu'une menace potentielle est détectée.
-Lors de la recherche de solutions IPS, vous rencontrerez des systèmes de détection d'intrusion (IDS).
-La principale différence entre IPS et IDS réside dans l'action entreprise lorsqu'un problème potentiel est détecté.
-Les IPS contrôlent l'accès au réseau informatique et l'immunise des abus et des attaques. Ces systèmes sont créés pour observer les données intrusives et prendre des mesures pour empêcher les attaques de se produire.
-Les systèmes de détection d'intrusion ne sont pas conçus pour empêcher les attaques. Ils surveillent simplement le réseau et envoient des alertes à l'administrateur lorsqu'une menace potentielle est détectée.
-L’ IDS est un système de détection d'intrusion, IPS est un système de prévention des commandes.
+Examinons donc la différence entre IPS et IDS, la principale différence entre IPS et IDS réside dans l'action entreprise lorsqu'un problème potentiel est détecté. Les systèmes de prévention des intrusions contrôlent l'accès au réseau informatique et l'immunise des abus et des attaques. Ces systèmes sont créés pour observer les données intrusives et prendre des mesures pour empêcher les attaques de se produire. Les systèmes de détection d'intrusion ne sont pas conçus pour empêcher les attaques. Ils surveillent simplement le réseau et envoient des alertes à l'administrateur lorsqu'une menace potentielle est détectée.
 
 
 
