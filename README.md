@@ -98,4 +98,34 @@ sudo apt install libpcre3 libpcre3-dbg libpcre3-dev build-essential libpcap-dev 
 ```
 
 Télécharger les sources de Suricata :
+```
 wget https://www.openinfosecfoundation.org/download/suricata-6.0.1.tar.gz
+```
+
+Décompresser les sources :
+```
+tar -xvf suricata-6.0.1.tar.gz
+```
+
+Se placer dans le dossier Suricata :
+
+```
+cd $HOME/suricata-6.0.1/
+```
+Configurer l’installation du logiciel :
+```
+./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var --enable-nfqueue --enable-lua
+```
+
+Pour la ompiler suricata :
+```
+make
+```
+
+ensuite installer suricata :
+```
+sudo make install
+```
+
+
+
