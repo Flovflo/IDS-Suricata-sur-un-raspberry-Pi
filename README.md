@@ -129,5 +129,32 @@ sudo make install
 
 <img width="801" alt="image" src="https://user-images.githubusercontent.com/86321847/140886787-93c54373-070c-4da6-b744-4f122303aab6.png">
 
+Se placer dans le dossier suricata-update :
+```
+cd $HOME/pi/suricata-6.0.1/suricata-update/
+```
 
+Compiler suricata-update :
+```
+sudo python setup.py build
+```
 
+Installer suricata-update :
+```
+sudo python setup.py install
+```
+Se placer dans le dossier Suricata :
+```
+cd ..
+```
+
+Finaliser l’installation de suricata en y incluant ses règles :
+```
+sudo make install-full
+```
+Mettre à jour les règles de suricata :
+```
+sudo suricata-update
+```
+
+<h2> Configurer Suricata <h2/>
