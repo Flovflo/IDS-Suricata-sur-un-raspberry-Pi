@@ -178,7 +178,7 @@ sudo suricata -c /etc/suricata/suricata.yaml -i eth0 -S /var/lib/suricata/rules/
 ```
 Soit avec :  
 
- * "-c /etc/suricata/suricata.yaml" : fichier de configuration à utiliser
+ * ```-c /etc/suricata/suricata.yaml``` : fichier de configuration à utiliser
 
  * "-i eth0" : interface Ethernet à surveiller
 
