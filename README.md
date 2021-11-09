@@ -126,6 +126,10 @@ ensuite installer suricata :
 ```
 sudo make install
 ```
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/86321847/140886553-81b8ae54-9e63-4b9b-9a90-962c18448140.pn" />
+</p>
+
 
 
 
