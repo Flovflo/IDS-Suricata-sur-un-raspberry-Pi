@@ -199,6 +199,6 @@ alert icmp any any -> any any (msg: "ICMP Packet found"; sid: 1; rev: 1;)
 
 <img width="773" alt="image" src="https://user-images.githubusercontent.com/86321847/140893000-00264fdb-29d4-40d2-8fcc-c92baeebf808.png">
 
-
+<h1> 3) Installation d'une interface graphique avec Fluent Bit </h1>
 
 
