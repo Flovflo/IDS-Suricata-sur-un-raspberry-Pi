@@ -201,4 +201,7 @@ alert icmp any any -> any any (msg: "ICMP Packet found"; sid: 1; rev: 1;)
 
 <h1> 3) Installation d'une interface graphique avec Fluent Bit </h1>
 
+Maintenant que nous avons des alertes de journalisation Suricata, concentrons-nous sur la fin de la réception. Nous devons configurer le moteur Elasticsearch qui ingérera et indexera les alertes et Kibana qui sera utilisé pour visualiser les alertes, construire de beaux écrans de tableau de bord, etc.
+Heureusement, il existe de très bonnes images Docker prêtes à l'emploi pour Elasticsearch et Kibana, utilisons-les pour économiser du temps et des efforts. Ces images sont conservées par Idriss Neumann et sont disponibles ici : https://gitlab.comwork.io/oss/elasticstack/elasticstack-arm
+
 
