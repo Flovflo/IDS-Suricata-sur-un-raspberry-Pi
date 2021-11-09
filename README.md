@@ -170,7 +170,7 @@ Modifier la variable HOME_NET afin qu’elle contienne votre réseau local, par 
  <img width="773" alt="image" src="https://user-images.githubusercontent.com/86321847/140889530-09e0470e-b145-4850-b17b-295de73dbb45.png">
 
 
-<h2> Maintenant lancer Suricata </h2>
+<h3> Maintenant lancer Suricata </h3>
 
 Lancer suricata avec la commande suivante :
 ```
@@ -184,3 +184,5 @@ Soit avec :
 
  * ```-S /var/lib/suricata/rules/suricata.rules ```: fichier contenant les règles à utiliser
 
+Maintenant que suricata est bien installé , on peut tester Suricata
+<h3> Teste Suricata </h3>
