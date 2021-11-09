@@ -186,3 +186,15 @@ Soit avec :
 
 Maintenant que suricata est bien installé , on peut tester Suricata
 <h3> Teste Suricata </h3>
+Pour vérifier le bon fonctionnement de Suricata , j’ajoute  une règle qui affiche un avertissement à chaque réception d’un ICMP Echo (ping).
+
+lancer suricata.rules pour ajouter la regle suivant  : 
+```
+nano /var/lib/suricata/rules/suricata.rules
+```
+
+<img width="773" alt="image" src="https://user-images.githubusercontent.com/86321847/140893000-00264fdb-29d4-40d2-8fcc-c92baeebf808.png">
+
+
+
+
