@@ -110,7 +110,7 @@ tar -xvf suricata-6.0.1.tar.gz
 Se placer dans le dossier Suricata :
 
 ```
-cd $HOME/suricata-6.0.1/
+cd $HOME/pi/suricata-6.0.1/
 ```
 Configurer l’installation du logiciel :
 ```
