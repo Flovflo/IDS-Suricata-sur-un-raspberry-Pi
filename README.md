@@ -158,7 +158,7 @@ sudo suricata-update
 ```
 <img width="773" alt="image" src="https://user-images.githubusercontent.com/86321847/140889091-68077d2a-27ea-404d-8730-af53e026805f.png">
 
-<h2> Configurer Suricata </h2>
+<h3> Configurer Suricata </h3>
  Configurer suricata en éditant le fichier suricata.yaml :
 ```
 sudo nano /etc/suricata/suricata.yaml
