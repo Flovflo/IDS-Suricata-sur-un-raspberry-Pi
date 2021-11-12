@@ -156,10 +156,11 @@ sudo suricata-update
 
 <h3> Configurer Suricata </h3>
  Configurer suricata en éditant le fichier suricata.yaml :  
+ 
+
 ```
 sudo nano /etc/suricata/suricata.yaml
 ```
-
 
 Modifier la variable HOME_NET afin qu’elle contienne votre réseau local, par exemple :
  
