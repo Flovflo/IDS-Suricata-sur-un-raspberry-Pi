@@ -82,10 +82,9 @@ Le IP privé de mon raspberry pi et donc 192.168.0.23 soite mje peux maintenant 
 </p>
 
    <h3> 2) Accès à distance </h3>
-Pour pouvoir accéder au raspberry pi depuis l'IUT et pour la configuration et par la suite la maintenance et là supervision , il est donc important de pouvoir avoir un accès au raspberry pi mais de manière sécurisée c'est pour cela que nous avons fait un vpn WIREGUARD pour avoir de très bonnes performances tout en restant très sécurisé. 
-
-
+Pour pouvoir accéder au raspberry pi depuis l'IUT et pour la configuration et par la suite la maintenance et la supervision, il est donc important de pouvoir avoir un accès au raspberry pi, mais de manière sécurisée, c'est pour cela que nous avons fait un vpn WIREGUARD pour avoir de très bonnes performances tout en restant très sécurisé.  
 Nous sommes prêts à passer à l'étape 2.
+
 
    <h2> 2) Installation de Suricata </h2>
    
