@@ -259,8 +259,9 @@ Suricata enregistre 4 type de log  :
 * ``` fast.log ``` : activités suspectes 
 * ``` eve.json ``` : trafic de votre réseau local ainsi que les activités suspectes au format JSON
 
-<h2> gestion des fichiers de logs sur NAS </h2>
+<h2> Gestion des fichiers de logs sur NAS </h2>
 Nous choisissions le nas pour une raison de fiabilité êtres sur de ne pas perdre les logs, mais vous pouvez très bien utiliser un disque dur externe branché en USB
+N’ayant pas de NAS à disposition, j’utilise une vm  [https://xpenology.club/](xpenology) pour simuler un nas synology
 
 <h1> 6) Installation d'une interface graphique avec Fluent Bit </h1>
 
