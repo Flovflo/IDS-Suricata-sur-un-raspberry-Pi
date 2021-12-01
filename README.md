@@ -272,9 +272,11 @@ systemctl start open-iscsi
 ```
 Laissez le système "découvrir" la cible iSCSI sur le NAS, notez/copiez le fqdn de la cible et attachez-la à votre système :   
 ```
-sudo iscsiadm --mode discovery --type sendtargets --portal <qnap IP>
-sudo iscsiadm --mode node --targetname <fqdn of the target as returned by the command above> --portal <qnap IP> --login
+sudo iscsiadm --mode discovery --type sendtargets --portal 192.168.0.30
+sudo iscsiadm --mode node --targetname <fqdn of the target as returned by the command above> --portal 192.168.0.30 --login
 ```
+À ce stade, exécutez <font color="green"> sudo fidsk -l </font> et identifiez le périphérique qui a été attribué à la cible iSCSI, dans mon cas, c'était <font color="green"> /dev/sda </font>. Formatez le périphérique via la commande : <font color="green"> sudo mkfs.ext4 /dev/sda </font . Vous pouvez maintenant le monter où vous voulez (j'ai choisi /mnt/nas_iscsi) :
+
 
 <h1> 6) Installation d'une interface graphique avec Fluent Bit </h1>
 
