@@ -216,28 +216,21 @@ ExecStop=/bin/kill $MAINPID
 WantedBy=multi-user.target
 ```
 
-soit pour activer notre nouveau service suricata on utilise la commande commande :
-```
-systemctl enable suricata.service
-```
+soit pour activer notre nouveau service suricata on utilise la commande commande :   
 ```
 systemctl enable suricata.service
 ```   
 
-Maintenant suricata peut etre utiliser en tant que service :
+Maintenant suricata peut etre utiliser en tant que service :   
 ```
 systemctl start suricata.service
-```
-```
-systemctl start suricata.service
-```
-Pour l'ancer le service ou le stopper :
-```
-ssystemctl start suricata.service
 ```
 
+
+Pour le stopper :  
+
 ```
-ssystemctl stop suricata.service
+systemctl stop suricata.service
 ```
 
 Pour le relancer :
@@ -256,7 +249,20 @@ on verifie que le service est bien lancer.
 
 Le service se lancera maintenant automatiquement au démarrage du Raspberry Pi.
 
-<h1> 5) Installation d'une interface graphique avec Fluent Bit </h1>
+<h1> 4) Exploiter les fichiers de logs  </h1>
+Il enregistre le trafic réseau détecté et des activités suspectes, Suricata enregistre également des informations de service et des statistiques de trafic réseau. D’ailleurs, il faut faire attention, car ces logs prennent vite de la place, ils peuvent facilement remplir la carte sd sur raspberry pi et aussi un carte sd ne sont pas conçues pour des lectures, écritures intensives et elles peuvent échouer après un certain temps. Donc pour une raison de fiabilité et avoir un système de stockage et de sauvegarde performant, nous n’allons pas utiliser une carte sd. 
+
+Suricata enregistre 4 type de log  :
+
+* ``` suricata.log ``` : messages de démarrage de Suricata
+* ``` stats.log ``` : statistiques sur le trafic réseau
+* ``` fast.log ``` : activités suspectes 
+* ``` eve.json ``` : trafic de votre réseau local ainsi que les activités suspectes au format JSON
+
+<h2> gestion des fichiers de logs sur NAS </h2>
+Nous choisissions le nas pour une raison de fiabilité êtres sur de ne pas perdre les logs, mais vous pouvez très bien utiliser un disque dur externe branché en USB
+
+<h1> 6) Installation d'une interface graphique avec Fluent Bit </h1>
 
 Maintenant que nous avons des alertes de journalisation Suricata, concentrons-nous sur la fin de la réception. Nous devons configurer le moteur Elasticsearch qui ingérera et indexera les alertes et Kibana qui sera utilisé pour visualiser les alertes, construire de beaux écrans de tableau de bord, etc.
 Heureusement, il existe de très bonnes images Docker prêtes à l'emploi pour Elasticsearch et Kibana, utilisons-les pour économiser du temps et des efforts. Ces images sont conservées par Idriss Neumann et sont disponibles ici : https://gitlab.comwork.io/oss/elasticstack/elasticstack-arm
