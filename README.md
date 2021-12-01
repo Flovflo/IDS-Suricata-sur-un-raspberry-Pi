@@ -262,6 +262,19 @@ Suricata enregistre 4 type de log  :
 <h2> Gestion des fichiers de logs sur NAS </h2>
 Nous choisissions le nas pour une raison de fiabilité êtres sur de ne pas perdre les logs, mais vous pouvez très bien utiliser un disque dur externe branché en USB
 N’ayant pas de NAS à disposition, j’utilise une vm  [https://xpenology.club/](xpenology) pour simuler un nas synology
+pour ce faire nous allons monter un système de fichiers distant sur le Pi à l'aide d'iSCSI.
+creer une cible iscsi sur le NAS synology
+
+ensuite j'install et demarre le service iscsi sur le raspberry
+```
+apt install open-iscsi
+systemctl start open-iscsi
+```
+Laissez le système "découvrir" la cible iSCSI sur le NAS, notez/copiez le fqdn de la cible et attachez-la à votre système :   
+```
+sudo iscsiadm --mode discovery --type sendtargets --portal <qnap IP>
+sudo iscsiadm --mode node --targetname <fqdn of the target as returned by the command above> --portal <qnap IP> --login
+```
 
 <h1> 6) Installation d'une interface graphique avec Fluent Bit </h1>
 
