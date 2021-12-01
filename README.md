@@ -196,7 +196,66 @@ alert icmp any any -> any any (msg: "ICMP Packet found"; sid: 1; rev: 1;)
 
 <img width="773" alt="image" src="https://user-images.githubusercontent.com/86321847/140893000-00264fdb-29d4-40d2-8fcc-c92baeebf808.png">
 
-<h1> 3) Installation d'une interface graphique avec Fluent Bit </h1>
+<h1> 3)Suricata en mode service </h1>
+Pour pouvoir utiliser suricata en tant que service Suricata en tant que service, il faut créer ce fichier
+```
+gedit /etc/systemd/system/suricata.service
+```
+
+```
+# Exemple de fichier d'unité systemd de Suricata.
+[Unit]
+Description=Suricata Intrusion Detection Service
+After=network.target syslog.target
+[Service]
+ExecStart=/usr/bin/suricata -c /etc/suricata/suricata.yaml -i eth0 -S /var/lib/suricata/rules/suricata.rules
+ExecReload=/bin/kill -HUP $MAINPID
+ExecStop=/bin/kill $MAINPID
+[Install]
+WantedBy=multi-user.target
+```
+
+soit pour activer notre nouveau service suricata on utilise la commande commande :
+```
+systemctl enable suricata.service
+```
+```
+systemctl enable suricata.service
+```   
+
+Maintenant suricata peut etre utiliser en tant que service :
+```
+systemctl start suricata.service
+```
+```
+systemctl start suricata.service
+```
+Pour l'ancer le service ou le stopper :
+```
+ssystemctl start suricata.service
+```
+
+```
+ssystemctl stop suricata.service
+```
+
+Pour le relancer :
+```
+systemctl restart suricata.service
+```
+
+Pour vérifier l’état du service :
+```
+systemctl status suricata.service
+```
+
+Maintenant le service se démarre automatiquement au démarrage du raspberry pi
+on verifie que le service est bien lancer.
+
+
+Le service se lancera maintenant automatiquement au démarrage du Raspberry Pi.
+
+<h1> 5) Installation d'une interface graphique avec Fluent Bit </h1>
 
 Maintenant que nous avons des alertes de journalisation Suricata, concentrons-nous sur la fin de la réception. Nous devons configurer le moteur Elasticsearch qui ingérera et indexera les alertes et Kibana qui sera utilisé pour visualiser les alertes, construire de beaux écrans de tableau de bord, etc.
 Heureusement, il existe de très bonnes images Docker prêtes à l'emploi pour Elasticsearch et Kibana, utilisons-les pour économiser du temps et des efforts. Ces images sont conservées par Idriss Neumann et sont disponibles ici : https://gitlab.comwork.io/oss/elasticstack/elasticstack-arm
