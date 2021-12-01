@@ -197,11 +197,12 @@ alert icmp any any -> any any (msg: "ICMP Packet found"; sid: 1; rev: 1;)
 <img width="773" alt="image" src="https://user-images.githubusercontent.com/86321847/140893000-00264fdb-29d4-40d2-8fcc-c92baeebf808.png">
 
 <h1> 3)Suricata en mode service </h1>
-Pour pouvoir utiliser suricata en tant que service Suricata en tant que service, il faut créer ce fichier
+Pour pouvoir utiliser suricata en tant que service Suricata en tant que service, il faut créer ce fichier   
+
 ```
 gedit /etc/systemd/system/suricata.service
 ```
-
+   
 ```
 # Exemple de fichier d'unité systemd de Suricata.
 [Unit]
