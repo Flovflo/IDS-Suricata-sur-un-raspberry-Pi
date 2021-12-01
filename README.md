@@ -275,7 +275,7 @@ Laissez le système "découvrir" la cible iSCSI sur le NAS, notez/copiez le fqdn
 sudo iscsiadm --mode discovery --type sendtargets --portal 192.168.0.30
 sudo iscsiadm --mode node --targetname <fqdn of the target as returned by the command above> --portal 192.168.0.30 --login
 ```
-À ce stade, exécutez <font color="green"> sudo fidsk -l </font> et identifiez le périphérique qui a été attribué à la cible iSCSI, dans mon cas, c'était <font color="green"> /dev/sda </font>. Formatez le périphérique via la commande : <font color="green"> sudo mkfs.ext4 /dev/sda </font . Vous pouvez maintenant le monter où vous voulez (j'ai choisi /mnt/nas_iscsi) : - text in red
+À ce stade, exécutez <font color="green"> sudo fidsk -l </font> et identifiez le périphérique qui a été attribué à la cible iSCSI, dans mon cas, c'était <font color="green"> /dev/sda </font>. Formatez le périphérique via la commande : <font color="green"> sudo mkfs.ext4 /dev/sda </font . Vous pouvez maintenant le monter où vous voulez (j'ai choisi /mnt/nas_iscsi) : 
 
 
 <h1> 6) Installation d'une interface graphique avec Fluent Bit </h1>
@@ -303,3 +303,4 @@ docker network create elastic
 
 Source : https://www.reddit.com/r/raspberry_pi/comments/np1a8f/building_my_home_intrusion_detection_system/
        : https://jufajardini.wordpress.com/2021/02/15/suricata-on-your-raspberry-pi/
+       : https://www.framboise314.fr/detection-dintrusion-ids-avec-suricata-sur-raspberry-pi/
