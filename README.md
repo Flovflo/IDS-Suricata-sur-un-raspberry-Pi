@@ -279,6 +279,20 @@ sudo iscsiadm --mode node --targetname <fqdn of the target as returned by the co
 Puis je formatez le périphérique via la commande : ```  mkfs.ext4 /dev/sda ``` . je peux maintenant le monter ou je veux (j'ai choisi /mnt/nas_iscsi) :
 ``` mount /dev/sda /mnt/nas_iscsi/ ```
 
+pour que le disque soit automatiquement monté au démarrage :  ``` blkid /dev/sda "l'UUID de votre périphérique" ```
+
+Epusi j'edite le fichier de configuration de la cible iSCSI situé dans ``` /etc/iscsi/node/<fqdn>/<nom court>/default ``` et modifiez-le apr ``` node.startup = automatic ```
+Ajoutez à ``` /etc/fstab ``` :
+``` UUID=<UUID de votre périphérique> /mnt/nas_iscsi ext4 defaults,_netdev 0 0 ```
+
+Créez un répertoire pour les logs de Suricata ``` mkdir /mnt/nas_iscsi/suricata_logs ```
+j'arrêtez le service Suricata et j'editez son fichier de configuration 
+``` nano /etc/suricata/suricata.yml ``` et indiquez le répertoire de logs par défaut :
+``` default-log-dir : /mnt/nas_iscsi/suricata_logs/ ```
+Redémarrez Suricata ``` systemctl start suricata.service ``` et vérifiez que les fichiers journaux de Suricata sont créés dans le nouvel emplacement.
+Voila mon fichier mes log sont maintenant stoke sur mon serveur NAS 
+
+
 
 <h1> 6) Installation d'une interface graphique avec Fluent Bit </h1>
 
