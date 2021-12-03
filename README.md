@@ -200,7 +200,7 @@ alert icmp any any -> any any (msg: "ICMP Packet found"; sid: 1; rev: 1;)
 Pour pouvoir utiliser suricata en tant que service Suricata en tant que service, il faut créer ce fichier   
 
 ```
-gedit /etc/systemd/system/suricata.service
+nano /etc/systemd/system/suricata.service
 ```
    
 ```
@@ -243,9 +243,12 @@ Pour vérifier l’état du service :
 systemctl status suricata.service
 ```
 
+
+
+
 Maintenant le service se démarre automatiquement au démarrage du raspberry pi
 on verifie que le service est bien lancer.
-
+![image](https://user-images.githubusercontent.com/86321847/144584735-4173c3f0-2fc9-4bec-adc1-551f65f289b0.png)
 
 Le service se lancera maintenant automatiquement au démarrage du Raspberry Pi.
 
