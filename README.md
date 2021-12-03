@@ -288,7 +288,9 @@ Ajoutez à ``` /etc/fstab ``` :
 Créez un répertoire pour les logs de Suricata ``` mkdir /mnt/nas_iscsi/suricata_logs ```
 j'arrêtez le service Suricata et j'editez son fichier de configuration 
 ``` nano /etc/suricata/suricata.yml ``` et indiquez le répertoire de logs par défaut :
-``` default-log-dir : /mnt/nas_iscsi/suricata_logs/ ```
+``` default-log-dir : /mnt/nas_iscsi/suricata_logs/ ``` .
+
+
 Redémarrez Suricata ``` systemctl start suricata.service ``` et vérifiez que les fichiers journaux de Suricata sont créés dans le nouvel emplacement.
 Voila mon fichier mes log sont maintenant stoke sur mon serveur NAS 
 
