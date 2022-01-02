@@ -267,17 +267,20 @@ Nous choisissions le nas pour une raison de fiabilité êtres sur de ne pas perd
 N’ayant pas de NAS à disposition, j’utilise une vm  [https://xpenology.club/](xpenology) pour simuler un nas synology
 pour ce faire nous allons monter un système de fichiers distant sur le Pi à l'aide d'iSCSI.
 creer une cible iscsi sur le NAS synology
+![image](https://user-images.githubusercontent.com/86321847/147881337-43603476-cd1c-4e88-baa9-830fbf963b92.png)
+  
 
 ensuite j'install et demarre le service iscsi sur le raspberry
 ```
 apt install open-iscsi
 systemctl start open-iscsi
 ```
-Laissez le système "découvrir" la cible iSCSI sur le NAS, notez/copiez le fqdn de la cible et attachez-la à votre système :   
+Laissez le système "découvrir" la cible iSCSI sur le NAS, notez/copiez le dans de la cible et attachez-la à votre système :   
 ```
 sudo iscsiadm --mode discovery --type sendtargets --portal 192.168.0.30
 sudo iscsiadm --mode node --targetname <fqdn of the target as returned by the command above> --portal 192.168.0.30 --login
 ```
+
 À ce stade, j'exécute ``` fidsk -l ```  pour identifiez le périphérique qui a été attribué à la cible iSCSI, dans mon cas, c'était ``` /dev/sda ``` . 
 Puis je formatez le périphérique via la commande : ```  mkfs.ext4 /dev/sda ``` . je peux maintenant le monter ou je veux (j'ai choisi /mnt/nas_iscsi) :
 ``` mount /dev/sda /mnt/nas_iscsi/ ```
@@ -322,6 +325,6 @@ docker network create elastic
 
 
 
-Source : https://www.reddit.com/r/raspberry_pi/comments/np1a8f/building_my_home_intrusion_detection_system/
-       : https://jufajardini.wordpress.com/2021/02/15/suricata-on-your-raspberry-pi/
-       : https://www.framboise314.fr/detection-dintrusion-ids-avec-suricata-sur-raspberry-pi/
+Source : https://www.reddit.com/r/raspberry_pi/comments/np1a8f/building_my_home_intrusion_detection_system/  
+       : https://jufajardini.wordpress.com/2021/02/15/suricata-on-your-raspberry-pi/  
+       : https://www.framboise314.fr/detection-dintrusion-ids-avec-suricata-sur-raspberry-pi/  
