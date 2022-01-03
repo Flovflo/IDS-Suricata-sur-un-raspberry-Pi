@@ -51,6 +51,18 @@ C'est donc pour cela que nous choisissions Suricata.
 
 ![alt text](https://github.com/Flovflo/IDS-Suricata-sur-un-raspberry-Pi/blob/main/Image/schema/Sans%20titre.png)
 
+Utilisation d’un commutateur ou d’un switch avec port mirroring pour que tout le trafic puissent être vu par notre raspberry pu avec Suricata 
+Pour nous avec du cisco il faut :
+Pour dupliser tout les packet du port fastEthernet 0/1
+```
+monitor session 1 source interface fa 0/1 both
+```
+
+ET pour le renvoyer sur l’interace fastEthernet 0/2 
+```
+monitor session 1 destination interface fa0/2
+```
+
 **Raspberry Pi** : Le Raspberry Pi est un nano-ordinateur monocarte à processeur ARM qui fonctionne en 32 et 64 bits. Il fut créé pour pouvoir donner accès plus facilement aux ordinateurs. C’est très accessible dû au faible prix et aux logiciels libres. Le Raspberry Pi permet l’installation et l’exécution de plusieurs systèmes d’exploitation libre et compatible comme GNU, Linux et Debian. Il fonctionne également sur le système d’exploitation Windows 10.
 Le Raspberry Pi est fourni nu. Donc il n’y a ni boîtier, ni câble d’alimentation, de clavier, de souris, d’écran, pour diminuer les coûts.
 
