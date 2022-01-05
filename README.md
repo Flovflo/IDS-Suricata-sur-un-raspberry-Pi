@@ -48,8 +48,7 @@ C'est donc pour cela que nous choisissions Suricata.
 
 
 **Schéma d'installation**
-
-![alt text](https://github.com/Flovflo/IDS-Suricata-sur-un-raspberry-Pi/blob/main/Image/schema/Sans%20titre.png)
+![image](https://user-images.githubusercontent.com/86321847/148235773-baf631ee-091e-428a-863b-576a7d5eedfc.png)
 
 Utilisation d’un commutateur ou d’un switch avec port mirroring pour que tout le trafic puissent être vu par notre raspberry pu avec Suricata 
 Pour nous avec du cisco il faut :
