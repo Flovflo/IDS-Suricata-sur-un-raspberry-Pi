@@ -364,12 +364,13 @@ docker run --name kib01 --net elastic -p 5601:5601 -v /mnt/nas_iscsi/kib01_data:
   <h1> 7) Installation d'embout fluide </h1>
 Fluent Bit comblera le fossé entre les producteurs de grumes (Suricata) et les consommateurs de grumes (ElasticSearch et Kibana). Entre les deux, Fluent Bit va enrichir les logs avec la géolocalisation des adresses IP pour pouvoir visualiser la source ou la destination des paquets ayant déclenché l'alerte sur une carte du monde.
 
-FOn a opté pour Fluent Bit pour être plus léger en termes d'utilisation de la mémoire (-200/300 Mo par rapport à Logstash basé sur Java), un peu plus convivial pour le processeur, et a également utilisé une base de données GeoLiteCity2 plus précise et à jour que dans ma précédente itération basée sur Logstash de l'ancienne base de données GeoLiteCity.
-Nous suivrons la procédure ici : https://docs.fluentbit.io/manual/installation/linux/raspbian-raspberry-pi. Pour commencer, nous devons ajouter un nouveau dépôt APT pour en extraire le paquet :
+On a opté pour Fluent Bit car il est le plus léger en termes d'utilisation de la mémoire (-200/300 Mo par rapport à Logstash basé sur Java), un peu plus convivial pour le processeur, et a également utilisé une base de données GeoLiteCity2 plus précise et à jour que dans ma précédente itération basée sur Logstash de l'ancienne base de données GeoLiteCity.
+Pour commencer, nous devons ajouter un nouveau dépôt APT pour en extraire le paquet :
   ```
  curl https://packages.fluentbit.io/fluentbit.key | sudo apt-key add - 
   ```
-Edit the file /etc/apt/sources.listand add the following line:
+  
+Editez le fichier /etc/apt/sources.listet ajoutez la ligne suivante :
   ```
  deb https://packages.fluentbit.io/raspbian/buster buster main 
   ```
@@ -377,7 +378,99 @@ Exécutez ensuite les commandes suivantes :
   ```
  sudo apt-get update 
  sudo apt-get install td-agent-bit 
-```
+  ```
+  
+À ce stade, td-agent-bit  est installé et doit encore être configuré.
+On configure le fichier /etc/td-agent-bit/td-agent-bit.conf (gedit /etc/td-agent-bit/td-agent-bit.conf) avec cette configuration (adaptez l'IP du réseau interne à votre propre réseau - encore une fois dans mon cas, c'est 192.168.0.X et changez l'IP externe pour permettre aux alertes qui sont purement internes au LAN d'être géolocalisées sans erreur) :
+
+  ```
+  [SERVICE]
+    Flush           5
+    Daemon          off
+    Log_Level       error
+    Parsers_File    parsers.conf
+
+
+[INPUT]
+    Name tail
+    Tag  eve_json
+    Path /mnt/nas_iscsi/suricata_logs/eve.json
+    Parser myjson
+    Db /mnt/nas_iscsi/fluentbit_logs/sincedb
+
+[FILTER]
+    Name  modify
+    Match *
+    Condition Key_Value_Does_Not_Match src_ip 192.168.0.*
+    Copy src_ip ip
+
+[FILTER]
+    Name modify
+    Match *
+    Condition Key_Value_Does_Not_Match dest_ip 192.168.0.*
+    Copy dest_ip ip
+
+[FILTER]
+    Name modify
+    Match *
+    Condition Key_Value_Matches dest_ip 192.168.0.*
+    Condition Key_Value_Matches src_ip 192.168.0.*
+    Add ip <ENTER YOUR PUBLIC IP HERE OR A FIXED IP FROM YOUR ISP>
+
+[FILTER]
+    Name  geoip2
+    Database /usr/share/GeoIP/GeoLite2-City.mmdb
+    Match *
+    Lookup_key ip
+    Record lon ip %{location.longitude}
+    Record lat ip %{location.latitude}
+    Record country_name ip %{country.names.en}
+    Record city_name ip %{city.names.en}
+    Record region_code ip %{postal.code}
+    Record timezone ip %{location.time_zone}
+    Record country_code3 ip %{country.iso_code}
+    Record region_name ip %{subdivisions.0.iso_code}
+    Record latitude ip %{location.latitude}
+    Record longitude ip %{location.longitude}
+    Record continent_code ip %{continent.code}
+    Record country_code2 ip %{country.iso_code}
+
+[FILTER]
+    Name nest
+    Match *
+    Operation nest
+    Wildcard country
+    Wildcard lon
+    Wildcard lat
+    Nest_under location
+
+
+[FILTER]
+    Name nest
+    Match *
+    Operation nest
+    Wildcard country_name
+    Wildcard city_name
+    Wildcard region_code
+    Wildcard timezone
+    Wildcard country_code3
+    Wildcard region_name
+    Wildcard ip
+    Wildcard latitude
+    Wildcard longitude
+    Wildcard continent_code
+    Wildcard country_code2
+    Wildcard location
+    Nest_under geoip
+
+[OUTPUT]
+    Name  es
+    Match *
+    Host  127.0.0.1
+    Port  9200
+    Index logstash
+    Logstash_Format on
+   ```
 
 
 
