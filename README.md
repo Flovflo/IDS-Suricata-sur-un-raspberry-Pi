@@ -487,6 +487,10 @@ Créez un fichier de configuration de l'analyseur : ```gedit /etc/td-agent-bit/p
   ```
 Vous avez maintenant terminé et vous pouvez démarrer le deamon Fluent Bit  ``` service td-agent-bit start ```
 
+Ok, maintenant tout devrait fonctionner à ce stade. Connectez-vous à Kibana à l'adresse http://192.168.0.38:5601 et utilisez la fonction Discover pour afficher votre index Logstash et toutes les données poussées de Logstash vers Elasticsearch.
+Avec la commande  ```curl 3wzn5p2yiumh7akj.onion ```  vous verrez un avertissement apparaître dans Kibana.
+Je vais maintenant créer un tableau de bord ( les alertes de la journée en cours, les alertes des 30 derniers jours et les signes d'alerte les plus courants).
+
 
 
 
