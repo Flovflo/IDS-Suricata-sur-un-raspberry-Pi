@@ -313,9 +313,10 @@ Voila mon fichier mes log sont maintenant stoke sur mon serveur NAS
 
 
 
-<h1> 6) Installation d'une interface graphique avec Fluent Bit </h1>
+<h1> 6) Installation d'une interface graphique  </h1>
+<h2> Installation d'Elasticsearch et de Kibana </h2>
 
-Maintenant que nous avons des alertes de journalisation Suricata, concentrons-nous sur la fin de la réception. Nous devons configurer le moteur Elasticsearch qui ingérera et indexera les alertes et Kibana qui sera utilisé pour visualiser les alertes, construire de beaux écrans de tableau de bord, etc.
+Maintenant que nous avons des alertes de journalisation Suricata, concentrons-nous sur l'extrémité destinataire. Nous devons configurer le moteur Elasticsearch qui ingérera et indexera les alertes et Kibana qui sera utilisé pour visualiser les alertes, construire de beaux écrans de tableau de bord, etc.
 Heureusement, il existe de très bonnes images Docker prêtes à l'emploi pour Elasticsearch et Kibana, utilisons-les pour économiser du temps et des efforts. Ces images sont conservées par Idriss Neumann et sont disponibles ici : https://gitlab.comwork.io/oss/elasticstack/elasticstack-arm
 
 Installer Docker :
@@ -331,6 +332,29 @@ docker pull comworkio/elasticsearch:latest-arm
 docker pull comworkio/kibana:latest-arm
 docker network create elastic
 ```
+
+Nous voulons également stocker les journaux et les données d'Elasticsearch et de Kibana sur la cible iSCSI du NAS. Pour ce faire, créez les répertoires :
+```
+sudo mkdir /mnt/nas_iscsi/es01_logs
+sudo mkdir /mnt/nas_iscsi/es01_data
+sudo mkdir /mnt/nas_iscsi/kib01_logs
+sudo mkdir /mnt/nas_iscsi/kib01_data
+```
+
+On lance les conteneur , nommés ES01 et KIB01, et mappez les répertoires hôtes créés ci-dessus :
+```
+docker run --name es01 --net elastic -p 9200:9200 -p 9300:9300 -v /mnt/nas_iscsi/es01_data:/usr/share/elasticsearch/data -v /mnt/nas_iscsi/es01_logs:/usr/share/elasticsearch/logs -e "discovery.type=single-node" comworkio/elasticsearch:latest-arm &
+docker run --name kib01 --net elastic -p 5601:5601 -v /mnt/nas_iscsi/kib01_data:/usr/share/kibana/data -v /mnt/nas_iscsi/kib01_logs:/var/log -e "ELASTICSEARCH_HOSTS=http://es01:9200" -e “ES_HOST=es01” comworkio/kibana:latest-arm &
+```
+
+>Important :
+>Il me semble qu'il y a un petit bug dans l'image Kibana et que l'adresse IP du serveur Elasticsearch n'est pas correctement configurée. Pour corriger cela, entrez >dans le conteneur (docker exec -it kib01 bash) et modifiez le fichier/usr/share/kibana/config/kibana.yml. Sur la dernière ligne, il y a une adresse IP de serveur >qui est codée en dur, remplacez-la par es01. Changez également la destination de journalisation par défaut et enregistrez le fichier, cela devrait ressembler à :
+>server.host: 0.0.0.0
+>elasticsearch.hosts: ["http://es01:9200"]
+>logging.dest: /var/log/kibana.log
+>Redémarrez le conteneur Kibana :
+>docker stop kib01; docker start kib01
+>À ce stade, le moteur Kibana devrait fonctionner correctement et être connecté au serveur Elasticsearch. Essayez-le en parcourant l'adresse http://<IP de votre >Raspberry>:5601.
 
 
 
