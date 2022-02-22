@@ -349,9 +349,13 @@ docker run --name kib01 --net elastic -p 5601:5601 -v /mnt/nas_iscsi/kib01_data:
 
 >Important :
 >Il me semble qu'il y a un petit bug dans l'image Kibana et que l'adresse IP du serveur Elasticsearch n'est pas correctement configurée. Pour corriger cela, entrez >dans le conteneur (docker exec -it kib01 bash) et modifiez le fichier/usr/share/kibana/config/kibana.yml. Sur la dernière ligne, il y a une adresse IP de serveur >qui est codée en dur, remplacez-la par es01. Changez également la destination de journalisation par défaut et enregistrez le fichier, cela devrait ressembler à :
+
+
 >*server.host: 0.0.0.0*
 >*elasticsearch.hosts: ["http://es01:9200"]*
 >*logging.dest: /var/log/kibana.log*
+
+
 >Redémarrez le conteneur Kibana :
 >*docker stop kib01; docker start kib01*
 >À ce stade, le moteur Kibana devrait fonctionner correctement et être connecté au serveur Elasticsearch. Essayez-le en parcourant l'adresse http://<IP de votre >Raspberry>:5601.
