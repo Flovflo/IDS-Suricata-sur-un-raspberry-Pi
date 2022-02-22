@@ -485,9 +485,9 @@ Créez un fichier de configuration de l'analyseur : ```gedit /etc/td-agent-bit/p
     Time_Key timestamp
     Time_Format %Y-%m-%dT%H:%M:%S.%L%z
   ```
-Vous avez maintenant terminé et vous pouvez démarrer le deamon Fluent Bit sudo service td-agent-bit start
+Vous avez maintenant terminé et vous pouvez démarrer le deamon Fluent Bit  ``` service td-agent-bit start ```
 
-Traduit avec www.DeepL.com/Translator (version gratuite)
+
 
 
 Source : https://www.reddit.com/r/raspberry_pi/comments/np1a8f/building_my_home_intrusion_detection_system/  
