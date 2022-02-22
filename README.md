@@ -471,7 +471,23 @@ On configure le fichier /etc/td-agent-bit/td-agent-bit.conf (gedit /etc/td-agent
     Index logstash
     Logstash_Format on
    ```
+Créez le fichier db utilisé pour enregistrer la position du décalage dans le fichier source :
+  ```
+mkdir -p /mnt/nas_iscsi/fluentbit_logs/
+touch /mnt/nas_iscsi/fluentbit_logs/sincedb
+  ```
+Créer un compte sur https://dev.maxmind.com/geoip/geolocate-an-ip/databases et télécharger la base de données GoeLiteCity2, pour la mettre dans /usr/share/GeoIP/GeoLite2-City.mmdb
+Créez un fichier de configuration de l'analyseur : ```gedit /etc/td-agent-bit/parsers.conf```
+  ```
+[PARSER]
+    Nom monjson
+    Format json
+    Time_Key timestamp
+    Time_Format %Y-%m-%dT%H:%M:%S.%L%z
+  ```
+Vous avez maintenant terminé et vous pouvez démarrer le deamon Fluent Bit sudo service td-agent-bit start
 
+Traduit avec www.DeepL.com/Translator (version gratuite)
 
 
 Source : https://www.reddit.com/r/raspberry_pi/comments/np1a8f/building_my_home_intrusion_detection_system/  
