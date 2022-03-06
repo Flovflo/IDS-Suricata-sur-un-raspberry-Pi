@@ -485,7 +485,7 @@ Créez un fichier de configuration de l'analyseur : ```gedit /etc/td-agent-bit/p
     Time_Key timestamp
     Time_Format %Y-%m-%dT%H:%M:%S.%L%z
   ```
-Vous avez maintenant terminé et vous pouvez démarrer le deamon Fluent Bit  ``` service td-agent-bit start ```
+Tout est terminé , je peux démarrer le deamon Fluent Bit  ``` service td-agent-bit start ```
 
 Ok, maintenant tout devrait fonctionner à ce stade. Connectez-vous à Kibana à l'adresse http://192.168.0.38:5601 et utilisez la fonction Discover pour afficher votre index Logstash et toutes les données poussées de Logstash vers Elasticsearch.
 Avec la commande  ```curl 3wzn5p2yiumh7akj.onion ```  vous verrez un avertissement apparaître dans Kibana.
