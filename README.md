@@ -479,7 +479,7 @@ mkdir -p /mnt/nas_iscsi/fluentbit_logs/
 touch /mnt/nas_iscsi/fluentbit_logs/sincedb
   ```
 Créer un compte sur https://dev.maxmind.com/geoip/geolocate-an-ip/databases et télécharger la base de données GoeLiteCity2, pour la mettre dans /usr/share/GeoIP/GeoLite2-City.mmdb
-Créez un fichier de configuration de l'analyseur : ```gedit /etc/td-agent-bit/parsers.conf```
+Créez un fichier de configuration de l'analyseur : ```nano /etc/td-agent-bit/parsers.conf```
   ```
 [PARSER]
     Nom monjson
