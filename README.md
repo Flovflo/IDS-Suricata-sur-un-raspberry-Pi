@@ -335,10 +335,10 @@ docker network create elastic
 
 Nous voulons également stocker les journaux et les données d'Elasticsearch et de Kibana sur la cible iSCSI du NAS. Pour ce faire, créez les répertoires :
 ```
-sudo mkdir /mnt/nas_iscsi/es01_logs
-sudo mkdir /mnt/nas_iscsi/es01_data
-sudo mkdir /mnt/nas_iscsi/kib01_logs
-sudo mkdir /mnt/nas_iscsi/kib01_data
+mkdir /mnt/nas_iscsi/es01_logs
+mkdir /mnt/nas_iscsi/es01_data
+mkdir /mnt/nas_iscsi/kib01_logs
+mkdir /mnt/nas_iscsi/kib01_data
 ```
 
 On lance les conteneur , nommés ES01 et KIB01, et mappez les répertoires hôtes créés ci-dessus :
@@ -374,10 +374,12 @@ Editez le fichier /etc/apt/sources.listet ajoutez la ligne suivante :
   ```
  deb https://packages.fluentbit.io/raspbian/buster buster main 
   ```
+  <img width="696" alt="image" src="https://user-images.githubusercontent.com/86321847/157396854-5d650827-4b35-4d82-8502-49f1bc188e07.png">
+
 Exécutez ensuite les commandes suivantes :
   ```
- sudo apt-get update 
- sudo apt-get install td-agent-bit 
+ apt-get update 
+ apt-get install td-agent-bit 
   ```
   
 À ce stade, td-agent-bit  est installé et doit encore être configuré.
