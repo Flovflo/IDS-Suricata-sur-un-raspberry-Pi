@@ -473,6 +473,8 @@ On configure le fichier /etc/td-agent-bit/td-agent-bit.conf (nano /etc/td-agent-
     Index logstash
     Logstash_Format on
    ```
+  <img width="899" alt="image" src="https://user-images.githubusercontent.com/86321847/157398513-17e40212-af76-43f7-8a46-5c05badfafa7.png">
+
 Créez le fichier db utilisé pour enregistrer la position du décalage dans le fichier source :
   ```
 mkdir -p /mnt/nas_iscsi/fluentbit_logs/
