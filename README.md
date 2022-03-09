@@ -361,7 +361,7 @@ docker run --name kib01 --net elastic -p 5601:5601 -v /mnt/nas_iscsi/kib01_data:
 >À ce stade, le moteur Kibana devrait fonctionner correctement et être connecté au serveur Elasticsearch. Essayez-le en parcourant l'adresse http://<IP de votre >Raspberry>:5601.
 
   
-  <h1> 7) Installation d'embout fluide </h1>
+  <h1> 7) Installation Fluent Bit </h1>
 Fluent Bit comblera le fossé entre les producteurs de grumes (Suricata) et les consommateurs de grumes (ElasticSearch et Kibana). Entre les deux, Fluent Bit va enrichir les logs avec la géolocalisation des adresses IP pour pouvoir visualiser la source ou la destination des paquets ayant déclenché l'alerte sur une carte du monde.
 
 On a opté pour Fluent Bit car il est le plus léger en termes d'utilisation de la mémoire (-200/300 Mo par rapport à Logstash basé sur Java), un peu plus convivial pour le processeur, et a également utilisé une base de données GeoLiteCity2 plus précise et à jour que dans ma précédente itération basée sur Logstash de l'ancienne base de données GeoLiteCity.
