@@ -383,7 +383,7 @@ Exécutez ensuite les commandes suivantes :
   ```
   
 À ce stade, td-agent-bit  est installé et doit encore être configuré.
-On configure le fichier /etc/td-agent-bit/td-agent-bit.conf (gedit /etc/td-agent-bit/td-agent-bit.conf) avec cette configuration (adaptez l'IP du réseau interne à votre propre réseau - encore une fois dans mon cas, c'est 192.168.0.X et changez l'IP externe pour permettre aux alertes qui sont purement internes au LAN d'être géolocalisées sans erreur) :
+On configure le fichier /etc/td-agent-bit/td-agent-bit.conf (nano /etc/td-agent-bit/td-agent-bit.conf) avec cette configuration (adaptez l'IP du réseau interne à votre propre réseau - encore une fois dans mon cas, c'est 192.168.0.X et changez l'IP externe pour permettre aux alertes qui sont purement internes au LAN d'être géolocalisées sans erreur) :
 
   ```
   [SERVICE]
