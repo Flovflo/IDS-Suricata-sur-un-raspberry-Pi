@@ -278,6 +278,10 @@ Nous choisissions le nas pour une raison de fiabilité êtres sur de ne pas perd
 N’ayant pas de NAS à disposition, j’utilise une vm  [https://xpenology.club/](xpenology) pour simuler un nas synology
 pour ce faire nous allons monter un système de fichiers distant sur le Pi à l'aide d'iSCSI.
 creer une cible iscsi sur le NAS synology
+
+![image](https://user-images.githubusercontent.com/86321847/158569547-5ac09389-37a3-40c6-8e7d-74a579aa016d.png)
+![image](https://user-images.githubusercontent.com/86321847/158569898-35474000-b43e-490f-a82a-86fc142ff304.png)
+
 ![image](https://user-images.githubusercontent.com/86321847/147881337-43603476-cd1c-4e88-baa9-830fbf963b92.png)
   
 
