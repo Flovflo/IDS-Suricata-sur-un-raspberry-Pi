@@ -322,6 +322,7 @@ Créez un répertoire pour les logs de Suricata ``` mkdir /mnt/nas-iscsi/suricat
 j'arrêtez le service Suricata et j'editez son fichier de configuration 
 ``` nano /etc/suricata/suricata.yml ``` et indiquez le répertoire de logs par défaut :
 ``` default-log-dir : /mnt/nas-iscsi/suricata_logs/ ``` .
+<img width="864" alt="image" src="https://user-images.githubusercontent.com/86321847/158643373-9b9b37d8-880e-4e76-b22d-1481e95aaae4.png">
 
 
 Redémarrez Suricata ``` systemctl start suricata.service ``` et vérifiez que les fichiers journaux de Suricata sont créés dans le nouvel emplacement.
