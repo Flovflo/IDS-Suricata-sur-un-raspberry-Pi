@@ -315,6 +315,8 @@ Epusi j'edite le fichier de configuration de la cible iSCSI situé dans ``` /etc
 
 Ajoutez à ``` /etc/fstab ``` :
 ``` UUID=<UUID de votre périphérique> /mnt/nas_iscsi ext4 defaults,_netdev 0 0 ```
+<img width="864" alt="image" src="https://user-images.githubusercontent.com/86321847/158610562-08770a65-095e-4c65-9ac8-696c6f779f68.png">
+
 
 Créez un répertoire pour les logs de Suricata ``` mkdir /mnt/nas_iscsi/suricata_logs ```
 j'arrêtez le service Suricata et j'editez son fichier de configuration 
