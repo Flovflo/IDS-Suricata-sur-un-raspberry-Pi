@@ -311,6 +311,8 @@ Puis je formatez le périphérique via la commande : ```  mkfs.ext4 /dev/sda ```
 pour que le disque soit automatiquement monté au démarrage :  ``` blkid /dev/sda "l'UUID de votre périphérique" ```
 
 Epusi j'edite le fichier de configuration de la cible iSCSI situé dans ``` /etc/iscsi/node/<fqdn>/<nom court>/default ``` et modifiez-le apr ``` node.startup = automatic ```
+<img width="983" alt="image" src="https://user-images.githubusercontent.com/86321847/158608301-861e2986-b88c-4756-aa3e-1b24ea7b6a40.png">
+
 Ajoutez à ``` /etc/fstab ``` :
 ``` UUID=<UUID de votre périphérique> /mnt/nas_iscsi ext4 defaults,_netdev 0 0 ```
 
