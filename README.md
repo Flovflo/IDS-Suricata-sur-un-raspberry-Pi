@@ -342,12 +342,14 @@ curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 sudo usermod -aG docker $USER
 ```
-<h3> Doker ?  </h3>
+<h3> Doker ?  </h3> 
 Nous allons donc utiliser de docker donc un petit point sur qu'est-ce que le docker
 Petit point sur les commande a connaître lorsque vous utilisez Docker. 
-docker ps (-a) : cela vous montre  toutes les instances de docker en cours d'exécution dans votre environnement. Si vous ajoutez l'option -a, vous verrez même des conteneurs arrêtés.
+```docker ps (-a)``` : cela vous montre  toutes les instances de docker en cours d'exécution dans votre environnement. Si vous ajoutez l'option -a, vous verrez même des conteneurs arrêtés.  
+```docker images (-a)```: la commande montre les images que vous avez construites, et le -a vous montre les images intermédiaires.
 
-
+```docker network ls ``` : La commande docker network ls liste les différents réseaux 
+      
 Déconnexion et reconnectez-vous au Raspberry. Ensuite, extrayez les images Docker que nous utiliserons et créez un réseau Docker pour laisser les deux conteneurs d'Elasticsearch et de Kibana parler ensemble :
 ```
 docker pull comworkio/elasticsearch:latest-arm
