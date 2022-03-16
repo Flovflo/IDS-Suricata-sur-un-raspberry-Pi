@@ -305,6 +305,9 @@ pour identifiez le périphérique qui a été attribué à la cible iSCSI, dans 
 Puis je formatez le périphérique via la commande : ```  mkfs.ext4 /dev/sda ``` . je peux maintenant le monter ou je veux (j'ai choisi /mnt/nas_iscsi) :
 ``` mount /dev/sda /mnt/nas_iscsi/ ```
 
+<img width="612" alt="image" src="https://user-images.githubusercontent.com/86321847/158605907-ff078e5d-07fa-441a-a35b-614d46250ed0.png">
+
+
 pour que le disque soit automatiquement monté au démarrage :  ``` blkid /dev/sda "l'UUID de votre périphérique" ```
 
 Epusi j'edite le fichier de configuration de la cible iSCSI situé dans ``` /etc/iscsi/node/<fqdn>/<nom court>/default ``` et modifiez-le apr ``` node.startup = automatic ```
