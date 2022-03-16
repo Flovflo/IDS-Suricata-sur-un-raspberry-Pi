@@ -373,18 +373,16 @@ docker run --name es01 --net elastic -p 9200:9200 -p 9300:9300 -v /mnt/nas-iscsi
 docker run --name kib01 --net elastic -p 5601:5601 -v /mnt/nas-iscsi/kib01_data:/usr/share/kibana/data -v /mnt/nas-iscsi/kib01_logs:/var/log -e "ELASTICSEARCH_HOSTS=http://es01:9200" -e “ES_HOST=es01” comworkio/kibana:latest-arm &
 ```
 
->Important :
->Il me semble qu'il y a un petit bug dans l'image Kibana et que l'adresse IP du serveur Elasticsearch n'est pas correctement configurée. Pour corriger cela, entrez >dans le conteneur (docker exec -it kib01 bash) et modifiez le fichier/usr/share/kibana/config/kibana.yml. Sur la dernière ligne, il y a une adresse IP de serveur >qui est codée en dur, remplacez-la par es01. Changez également la destination de journalisation par défaut et enregistrez le fichier, cela devrait ressembler à :
+Important :
+Il me semble qu'il y a un petit bug dans l'image Kibana et que l'adresse IP du serveur Elasticsearch n'est pas correctement configurée. Pour corriger cela, entrez >dans le conteneur (docker exec -it kib01 bash) et modifiez le fichier/usr/share/kibana/config/kibana.yml. Sur la dernière ligne, il y a une adresse IP de serveur >qui est codée en dur, remplacez-la par es01. Changez également la destination de journalisation par défaut et enregistrez le fichier, cela devrait ressembler à :
+
+<img width="570" alt="image" src="https://user-images.githubusercontent.com/86321847/158650443-7298528d-f61e-4f56-b587-cdf5e4acaff1.png">
 
 
->*server.host: 0.0.0.0*
->*elasticsearch.hosts: ["http://es01:9200"]*
->*logging.dest: /var/log/kibana.log*
 
-
->Redémarrez le conteneur Kibana :
->*docker stop kib01; docker start kib01*
->À ce stade, le moteur Kibana devrait fonctionner correctement et être connecté au serveur Elasticsearch. Essayez-le en parcourant l'adresse http://<IP de votre >Raspberry>:5601.
+Redémarrez le conteneur Kibana :
+*docker stop kib01; docker start kib01*
+À ce stade, le moteur Kibana devrait fonctionner correctement et être connecté au serveur Elasticsearch. Essayez-le en parcourant l'adresse http://<IP de votre >Raspberry>:5601.
 
   
   <h1> 7) Installation Fluent Bit </h1>
