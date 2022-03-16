@@ -294,16 +294,16 @@ systemctl start open-iscsi
 
 Laissez le système "découvrir" la cible iSCSI sur le NAS, notez/copiez le dans de la cible et attachez-la à votre système :   
 ```
-sudo iscsiadm --mode discovery --type sendtargets --portal 192.168.0.30
-sudo iscsiadm --mode node --targetname <fqdn of the target as returned by the command above> --portal 192.168.0.30 --login
+sudo iscsiadm --mode discovery --type sendtargets --portal 192.168.0.33
+sudo iscsiadm --mode node --targetname <fqdn of the target as returned by the command above> --portal 192.168.0.33 --login
 ```
 
 À ce stade, j'exécute ``` fidsk -l ```  
 ![image](https://user-images.githubusercontent.com/86321847/158571795-fe47663b-7bcf-4523-916a-cbcd962ff694.png)
 
 pour identifiez le périphérique qui a été attribué à la cible iSCSI, dans mon cas, c'était ``` /dev/sda ``` . 
-Puis je formatez le périphérique via la commande : ```  mkfs.ext4 /dev/sda ``` . je peux maintenant le monter ou je veux (j'ai choisi /mnt/nas_iscsi) :
-``` mount /dev/sda /mnt/nas_iscsi/ ```
+Puis je formatez le périphérique via la commande : ```  mkfs.ext4 /dev/sda ``` . je peux maintenant le monter ou je veux (j'ai choisi /mnt/nas-iscsi) :
+``` mount /dev/sda /mnt/nas-iscsi/ ```
 
 <img width="612" alt="image" src="https://user-images.githubusercontent.com/86321847/158605907-ff078e5d-07fa-441a-a35b-614d46250ed0.png">
 
@@ -314,14 +314,14 @@ Epusi j'edite le fichier de configuration de la cible iSCSI situé dans ``` /etc
 <img width="983" alt="image" src="https://user-images.githubusercontent.com/86321847/158608301-861e2986-b88c-4756-aa3e-1b24ea7b6a40.png">
 
 Ajoutez à ``` /etc/fstab ``` :
-``` UUID=<UUID de votre périphérique> /mnt/nas_iscsi ext4 defaults,_netdev 0 0 ```
+``` UUID=<UUID de votre périphérique> /mnt/nas-iscsi ext4 defaults,_netdev 0 0 ```
 <img width="864" alt="image" src="https://user-images.githubusercontent.com/86321847/158610562-08770a65-095e-4c65-9ac8-696c6f779f68.png">
 
 
-Créez un répertoire pour les logs de Suricata ``` mkdir /mnt/nas_iscsi/suricata_logs ```
+Créez un répertoire pour les logs de Suricata ``` mkdir /mnt/nas-iscsi/suricata_logs ```
 j'arrêtez le service Suricata et j'editez son fichier de configuration 
 ``` nano /etc/suricata/suricata.yml ``` et indiquez le répertoire de logs par défaut :
-``` default-log-dir : /mnt/nas_iscsi/suricata_logs/ ``` .
+``` default-log-dir : /mnt/nas-iscsi/suricata_logs/ ``` .
 
 
 Redémarrez Suricata ``` systemctl start suricata.service ``` et vérifiez que les fichiers journaux de Suricata sont créés dans le nouvel emplacement.
