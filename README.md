@@ -342,6 +342,11 @@ curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 sudo usermod -aG docker $USER
 ```
+<h3> Doker ?  </h3>
+Nous allons donc utiliser de docker donc un petit point sur qu'est-ce que le docker
+Petit point sur les commande a connaître lorsque vous utilisez Docker. 
+docker ps (-a) : cela vous montre  toutes les instances de docker en cours d'exécution dans votre environnement. Si vous ajoutez l'option -a, vous verrez même des conteneurs arrêtés.
+
 
 Déconnexion et reconnectez-vous au Raspberry. Ensuite, extrayez les images Docker que nous utiliserons et créez un réseau Docker pour laisser les deux conteneurs d'Elasticsearch et de Kibana parler ensemble :
 ```
@@ -352,16 +357,16 @@ docker network create elastic
 
 Nous voulons également stocker les journaux et les données d'Elasticsearch et de Kibana sur la cible iSCSI du NAS. Pour ce faire, créez les répertoires :
 ```
-mkdir /mnt/nas_iscsi/es01_logs
-mkdir /mnt/nas_iscsi/es01_data
-mkdir /mnt/nas_iscsi/kib01_logs
-mkdir /mnt/nas_iscsi/kib01_data
+mkdir /mnt/nas-iscsi/es01_logs
+mkdir /mnt/nas-iscsi/es01_data
+mkdir /mnt/nas-iscsi/kib01_logs
+mkdir /mnt/nas-iscsi/kib01_data
 ```
 
 On lance les conteneur , nommés ES01 et KIB01, et mappez les répertoires hôtes créés ci-dessus :
 ```
-docker run --name es01 --net elastic -p 9200:9200 -p 9300:9300 -v /mnt/nas_iscsi/es01_data:/usr/share/elasticsearch/data -v /mnt/nas_iscsi/es01_logs:/usr/share/elasticsearch/logs -e "discovery.type=single-node" comworkio/elasticsearch:latest-arm &
-docker run --name kib01 --net elastic -p 5601:5601 -v /mnt/nas_iscsi/kib01_data:/usr/share/kibana/data -v /mnt/nas_iscsi/kib01_logs:/var/log -e "ELASTICSEARCH_HOSTS=http://es01:9200" -e “ES_HOST=es01” comworkio/kibana:latest-arm &
+docker run --name es01 --net elastic -p 9200:9200 -p 9300:9300 -v /mnt/nas-iscsi/es01_data:/usr/share/elasticsearch/data -v /mnt/nas-iscsi/es01_logs:/usr/share/elasticsearch/logs -e "discovery.type=single-node" comworkio/elasticsearch:latest-arm &
+docker run --name kib01 --net elastic -p 5601:5601 -v /mnt/nas-iscsi/kib01_data:/usr/share/kibana/data -v /mnt/nas-iscsi/kib01_logs:/var/log -e "ELASTICSEARCH_HOSTS=http://es01:9200" -e “ES_HOST=es01” comworkio/kibana:latest-arm &
 ```
 
 >Important :
