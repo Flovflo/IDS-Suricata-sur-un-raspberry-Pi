@@ -296,8 +296,14 @@ Je commence part téléchargé et uplaod les fichiers de conf
 https://drive.google.com/drive/folders/120qSow3L5XTYqhO3AkgngmBEXv3x0LTj
 Puis je crée ma vm et je poursuis l’installation après que tout soit fini, je peux avoir accès a l’interface graphique. 
 
+![image](https://user-images.githubusercontent.com/86321847/158827171-f9817a64-9ac3-486d-9727-18da0d17d591.png)
+
+
+
 ![image](https://user-images.githubusercontent.com/86321847/158824975-f93c3385-5d10-4615-83b7-d60b217ee090.png)
-   je prends en main le interface et installe le service iscsi
+
+je prends en main le interface et installe le service iscsi
+
 ![image](https://user-images.githubusercontent.com/86321847/158825152-c6913383-5793-46cb-b6e5-7c8596e82945.png)
 
 ![image](https://user-images.githubusercontent.com/86321847/147881337-43603476-cd1c-4e88-baa9-830fbf963b92.png)
