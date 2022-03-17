@@ -278,11 +278,24 @@ Nous choisissions le nas pour une raison de fiabilité êtres sur de ne pas perd
 N’ayant pas de NAS à disposition, j’utilise une vm  [https://xpenology.club/](xpenology) pour simuler un nas synology
 pour ce faire nous allons monter un système de fichiers distant sur le Pi à l'aide d'iSCSI.
 creer une cible iscsi sur le NAS synology
+__Proxmox__
+N'ayant pas de NAS à la maison, mais un serveur, j'avais d'abord pensé et fait une VM avec XPEinology qui simulait donc un nas synology dans Virtual box mais cela consommer énormément de ressources pour un résultat très peu concluant et très instable.
+Nous avons donc choisi la solution de l'hyperviseur de type 1
+Ce qui permet d'avoir une bien meilleure émulation, pouvoir le utilisation à distance et aussi surtout pour une question de sécurité il est très simple de faire des sauvegardes d'avoir des serveurs de réplication
+Nous avons donc choisi proxmox , mais proxmox, c’est quoi ?
+Proxmox (Proxmox Virtual Environment) est une solution de virtualisation basée sur Linux KVM (Debian 64 bits) qui permet la création de machines virtuelles de type OpenVZ et KVM. Il s'agit d'une solution de type bare metal (bare metal en français), au sens de tourner directement sur la machine, c'est-à-dire sans OS. Le nom signifie un hyperviseur de type 1 (également appelé natif), où un hyperviseur minimaliste simplifié et optimisé se comporte comme un moniteur qui démarre le matériel, se connecte à un réseau et démarre une machine virtuelle. Le serveur ESX de VMware, le LPAR d'IBM ou Hyper-V de Microsoft sont des hyperviseurs de type 1. Proxmox est géré via une interface web (```https://serverur_proxmox:8006```) et fournit une vue d'ensemble de toutes les VM installées. En plus de cette interface web, des scripts peuvent être créés pour automatiser certaines tâches et il est totalement gratuit.
+Donc je pars prendre ma clé téléchargée l'iso sur le site officiel et commencer à booster mon serveur sur la clé usb, je suis bien l'installation ensuite l'installation finie mon serveur démarre sur proxmox , il m'invite à aller sur l'interface web ```https://192.3168.0.45:8006```,
+Je m'y rends et on me demande mon nom et mot de passe je me log donc en root
+![image](https://user-images.githubusercontent.com/86321847/158822470-231b895d-a66b-4001-bc92-8ef84bf0d6f3.png)
 
+  ![image](https://user-images.githubusercontent.com/86321847/158821188-b33338ee-4227-47de-9a5e-ebc70801cb68.png)
+  
+
+![image](https://user-images.githubusercontent.com/86321847/147881337-43603476-cd1c-4e88-baa9-830fbf963b92.png)
 ![image](https://user-images.githubusercontent.com/86321847/158569547-5ac09389-37a3-40c6-8e7d-74a579aa016d.png)
 ![image](https://user-images.githubusercontent.com/86321847/158569898-35474000-b43e-490f-a82a-86fc142ff304.png)
 
-![image](https://user-images.githubusercontent.com/86321847/147881337-43603476-cd1c-4e88-baa9-830fbf963b92.png)
+
   
 
 ensuite j'install et demarre le service iscsi sur le raspberry
