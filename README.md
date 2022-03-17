@@ -296,7 +296,7 @@ Je commence part téléchargé et uplaod les fichiers de conf
 https://drive.google.com/drive/folders/120qSow3L5XTYqhO3AkgngmBEXv3x0LTj
 Puis je crée ma vm et je poursuis l’installation après que tout soit fini, je peux avoir accès a l’interface graphique. 
 
-![image](https://user-images.githubusercontent.com/86321847/158827171-f9817a64-9ac3-486d-9727-18da0d17d591.png)
+![image](https://user-images.githubusercontent.com/86321847/158827338-aa4b0e74-9b9e-46d3-8ec0-7e47c77e0bd3.png)
 
 
 
