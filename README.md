@@ -263,6 +263,27 @@ on verifie que le service est bien lancer.
 
 Le service se lancera maintenant automatiquement au démarrage du Raspberry Pi.
 <h1> 4) Les Regles Suricata  </h1>
+Il faut à la fois éviter les faux positifs et s'assurer que les règles utilisées sont à jour et permettent la détection de menaces récentes.
+
+Les règles activées par défaut de Suricata génèrent de nombreux faux positifs (alertes qui ne sont pas de vrais problèmes).   Je recommande de laisser Suricata fonctionner pendant quelques heures avec une utilisation normale de vos appareils et, d'analyser finement les alertes dans le fichier "fast.log" puis de désactiver certaines règles.   Par exemple, si vous utilisez Dropbox ou Skype sur votre réseau, vous devrez désactiver les règles correspondantes afin de ne pas générer d'alertes inutiles pour votre réseau.
+
+Pour renforcer la sécurité de votre installation, vous devrez peut-être aussi ajouter de nouvelles sources de règles ou créer vos propres règles.
+Chaque règle Suricata suit le modèle suivant :
+
+-action header options
+
+L'action correspond à l'action effectuée en cas de détection (alerte, abandon, passage...).
+
+L'en-tête permet de définir le protocole (tcp, http, ftp, dns, tls...) ainsi que l'adresse IP et le port de source et de destination du trafic concerné par l'alerte.
+
+Les options de la règle sont indiquées entre parenthèses et séparées par des virgules. Certaines options ont des paramètres, qui sont spécifiés par leur mot clé, suivi de deux points et de la valeur du paramètre.
+
+Les règles sont identifiées par leur identifiant de signature, le paramètre sid.
+
+Par exemple, voici la règle 2012647 relative à l'utilisation de Dropbox :
+
+
+
 
 <h1> 5) Exploiter les fichiers de logs  </h1>
 Il enregistre le trafic réseau détecté et des activités suspectes, Suricata enregistre également des informations de service et des statistiques de trafic réseau. D’ailleurs, il faut faire attention, car ces logs prennent vite de la place, ils peuvent facilement remplir la carte sd sur raspberry pi et aussi un carte sd ne sont pas conçues pour des lectures, écritures intensives et elles peuvent échouer après un certain temps. Donc pour une raison de fiabilité et avoir un système de stockage et de sauvegarde performant, nous n’allons pas utiliser une carte sd. 
