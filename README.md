@@ -277,8 +277,9 @@ Suricata enregistre 4 type de log  :
 Nous choisissions le nas pour une raison de fiabilité êtres sur de ne pas perdre les logs, mais vous pouvez très bien utiliser un disque dur externe branché en USB
 N’ayant pas de NAS à disposition, j’utilise une vm  [https://xpenology.club/](xpenology) pour simuler un nas synology
 pour ce faire nous allons monter un système de fichiers distant sur le Pi à l'aide d'iSCSI.
-creer une cible iscsi sur le NAS synology
+creer une cible iscsi sur le NAS synology.  
 __Proxmox__
+
 N'ayant pas de NAS à la maison, mais un serveur, j'avais d'abord pensé et fait une VM avec XPEinology qui simulait donc un nas synology dans Virtual box mais cela consommer énormément de ressources pour un résultat très peu concluant et très instable.
 Nous avons donc choisi la solution de l'hyperviseur de type 1
 Ce qui permet d'avoir une bien meilleure émulation, pouvoir le utilisation à distance et aussi surtout pour une question de sécurité il est très simple de faire des sauvegardes d'avoir des serveurs de réplication
