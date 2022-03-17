@@ -286,14 +286,25 @@ Nous avons donc choisi proxmox , mais proxmox, c’est quoi ?
 Proxmox (Proxmox Virtual Environment) est une solution de virtualisation basée sur Linux KVM (Debian 64 bits) qui permet la création de machines virtuelles de type OpenVZ et KVM. Il s'agit d'une solution de type bare metal (bare metal en français), au sens de tourner directement sur la machine, c'est-à-dire sans OS. Le nom signifie un hyperviseur de type 1 (également appelé natif), où un hyperviseur minimaliste simplifié et optimisé se comporte comme un moniteur qui démarre le matériel, se connecte à un réseau et démarre une machine virtuelle. Le serveur ESX de VMware, le LPAR d'IBM ou Hyper-V de Microsoft sont des hyperviseurs de type 1. Proxmox est géré via une interface web (```https://serverur_proxmox:8006```) et fournit une vue d'ensemble de toutes les VM installées. En plus de cette interface web, des scripts peuvent être créés pour automatiser certaines tâches et il est totalement gratuit.
 Donc je pars prendre ma clé téléchargée l'iso sur le site officiel et commencer à booster mon serveur sur la clé usb, je suis bien l'installation ensuite l'installation finie mon serveur démarre sur proxmox , il m'invite à aller sur l'interface web ```https://192.3168.0.45:8006```,
 Je m'y rends et on me demande mon nom et mot de passe je me log donc en root
-![image](https://user-images.githubusercontent.com/86321847/158822470-231b895d-a66b-4001-bc92-8ef84bf0d6f3.png)
 
   ![image](https://user-images.githubusercontent.com/86321847/158821188-b33338ee-4227-47de-9a5e-ebc70801cb68.png)
+     
+  D'ailleurs pour des soucis d'énergie comme c'était un ordinateur portable l'écran reste en permanence allumé et si je rappelle capot l'ordinateur se met en veille donc pour contrer ce problème voici la commande : ```systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target```
   
+Je configure simplement et je me lance dans l'installation de la VM
+Je commence part téléchargé et uplaod les fichiers de conf
+https://drive.google.com/drive/folders/120qSow3L5XTYqhO3AkgngmBEXv3x0LTj
+Puis je crée ma vm et je poursuis l’installation après que tout soit fini, je peux avoir accès a l’interface graphique. 
+
+![image](https://user-images.githubusercontent.com/86321847/158824975-f93c3385-5d10-4615-83b7-d60b217ee090.png)
+je prends en main le interface et installe le service iscsi
+![image](https://user-images.githubusercontent.com/86321847/158825152-c6913383-5793-46cb-b6e5-7c8596e82945.png)
 
 ![image](https://user-images.githubusercontent.com/86321847/147881337-43603476-cd1c-4e88-baa9-830fbf963b92.png)
 ![image](https://user-images.githubusercontent.com/86321847/158569547-5ac09389-37a3-40c6-8e7d-74a579aa016d.png)
 ![image](https://user-images.githubusercontent.com/86321847/158569898-35474000-b43e-490f-a82a-86fc142ff304.png)
+ 
+
 
 
   
