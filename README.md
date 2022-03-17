@@ -262,8 +262,9 @@ on verifie que le service est bien lancer.
 ![image](https://user-images.githubusercontent.com/86321847/144584735-4173c3f0-2fc9-4bec-adc1-551f65f289b0.png)
 
 Le service se lancera maintenant automatiquement au démarrage du Raspberry Pi.
+<h1> 4) Les Regles Suricata  </h1>
 
-<h1> 4) Exploiter les fichiers de logs  </h1>
+<h1> 5) Exploiter les fichiers de logs  </h1>
 Il enregistre le trafic réseau détecté et des activités suspectes, Suricata enregistre également des informations de service et des statistiques de trafic réseau. D’ailleurs, il faut faire attention, car ces logs prennent vite de la place, ils peuvent facilement remplir la carte sd sur raspberry pi et aussi un carte sd ne sont pas conçues pour des lectures, écritures intensives et elles peuvent échouer après un certain temps. Donc pour une raison de fiabilité et avoir un système de stockage et de sauvegarde performant, nous n’allons pas utiliser une carte sd. 
 
 Suricata enregistre 4 type de log  :
