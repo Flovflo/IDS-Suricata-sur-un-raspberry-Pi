@@ -344,7 +344,17 @@ sudo usermod -aG docker $USER
 ```
 <h3> Doker ?  </h3> 
 Nous allons donc utiliser de docker donc un petit point sur qu'est-ce que le docker
-Petit point sur les commande a connaître lorsque vous utilisez Docker.    
+   
+Avec la technologie Docker, vous pouvez traiter les conteneurs comme des machines virtuelles très légères et modulaires. En outre, ces conteneurs vous offrent une grande flexibilité : vous pouvez les créer, déployer, copier et déplacer d'un environnement à un autre.
+   
+__Comment ça fonctionne__
+
+La technologie Docker utilise le noyau Linux et des fonctions de ce noyau, telles que les groupes de contrôle cgroups et les espaces de noms, pour séparer les processus afin qu'ils puissent s'exécuter de façon indépendante. Ce qui est l'objectif des conteneurs : exécuter plusieurs processus et applications séparément les uns des autres afin d'optimiser l'utilisation de votre infrastructure tout en bénéficiant du même niveau de sécurité que celui des systèmes distincts.
+   
+Les outils de conteneurs, y compris Docker, sont associés à un modèle de déploiement basé sur une image (container). Il est ainsi plus simple de partager une application ou un ensemble de services, avec toutes leurs dépendances, entre plusieurs environnements.
+   
+Docker offre donc pas mal d’avantage modularité, sécurité, simplicité et rapidité.
+mais fessons un petit point sur les commande a connaître lorsque vous utilisez Docker.    
 
 ```docker ps (-a)``` : cela vous montre  toutes les instances de docker en cours d'exécution dans votre environnement. Si vous ajoutez l'option -a, vous verrez même des conteneurs arrêtés.  
 
