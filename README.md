@@ -279,7 +279,7 @@ N’ayant pas de NAS à disposition, j’utilise une vm  [https://xpenology.club
 pour ce faire nous allons monter un système de fichiers distant sur le Pi à l'aide d'iSCSI.
 creer une cible iscsi sur le NAS synology.  
 
-__Proxmox__
+<h3> Proxmox </h3>
 
 N'ayant pas de NAS à la maison, mais un serveur, j'avais d'abord pensé et fait une VM avec XPEinology qui simulait donc un nas synology dans Virtual box mais cela consommer énormément de ressources pour un résultat très peu concluant et très instable.
 Nous avons donc choisi la solution de l'hyperviseur de type 1
