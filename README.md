@@ -270,7 +270,7 @@ Les règles activées par défaut de Suricata génèrent de nombreux faux positi
 Pour renforcer la sécurité de votre installation, vous devrez peut-être aussi ajouter de nouvelles sources de règles ou créer vos propres règles.
 Chaque règle Suricata suit le modèle suivant :
 
--action header options
++ action header options
 
 L'action correspond à l'action effectuée en cas de détection (alerte, abandon, passage...).
 
