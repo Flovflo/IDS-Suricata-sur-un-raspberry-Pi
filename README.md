@@ -388,9 +388,16 @@ Voila mon fichier mes log sont maintenant stoke sur mon serveur NAS
 
 
 <h1> 6) Installation d'une interface graphique  </h1>
-<h2> Installation d'Elasticsearch et de Kibana </h2>
+<h2> Installation ELK </h2>
+
 
 Maintenant que nous avons des alertes de journalisation Suricata, concentrons-nous sur l'extrémité destinataire. Nous devons configurer le moteur Elasticsearch qui ingérera et indexera les alertes et Kibana qui sera utilisé pour visualiser les alertes, construire de beaux écrans de tableau de bord, etc.
+
+La stack ELK est un acronyme utilisé pour décrire une pile qui comprend trois projets open sources populaires : Elasticsearch, Logstash et Kibana. Elle est la principale solution open source de gestion des logs pour les entreprises qui souhaitent bénéficier des avantages d'une solution de journalisation centralisée.
+
+En effet, les outils : Elasticsearch, Logstash et Kibana, lorsqu'ils sont utilisés ensemble (car oui on peut les utiliser séparément ou avec d'autres technologies), forment une pile de bout en bout offrant une analyse de données dont des logs en temps réel afin de fournir des informations exploitables à partir de presque tout type de source de données structurée et non structurée. Vous comprendrez plus tard que chacun de ces produits joue un rôle différent dans vos analyses. Ils peuvent être utilisés pour des projets simples ou complexe car ils prennent en charge des opérations simples et avancées.
+cela correspond parfaitement a notre projet et il est aussi énormément utilisé en entreprise 
+
 Heureusement, il existe de très bonnes images Docker prêtes à l'emploi pour Elasticsearch et Kibana, utilisons-les pour économiser du temps et des efforts. Ces images sont conservées par Idriss Neumann et sont disponibles ici : https://gitlab.comwork.io/oss/elasticstack/elasticstack-arm
 
 Installer Docker :
