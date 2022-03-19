@@ -393,10 +393,27 @@ Voila mon fichier mes log sont maintenant stoke sur mon serveur NAS
 
 Maintenant que nous avons des alertes de journalisation Suricata, concentrons-nous sur l'extrémité destinataire. Nous devons configurer le moteur Elasticsearch qui ingérera et indexera les alertes et Kibana qui sera utilisé pour visualiser les alertes, construire de beaux écrans de tableau de bord, etc.
 
-La stack ELK est un acronyme utilisé pour décrire une pile qui comprend trois projets open sources populaires : Elasticsearch, Logstash et Kibana. Elle est la principale solution open source de gestion des logs pour les entreprises qui souhaitent bénéficier des avantages d'une solution de journalisation centralisée.
+Nous allons donc utiliser ELK 
+Mais qu’est ce que ELK , ELK est un acronyme upour décrire une pile qui comprend trois projets open source:
+-	 Elasticsearch, 
+-	 Logstash 
+-	 Kibana. 
+c’est la principal source de gestion des logs pour les entreprises qui souhaitent bénéficier des avantages d'une solution de journalisation centralisée.
+En effet, les outils : Elasticsearch, Logstash et Kibana, lorsqu'ils sont utilisés ensemble car vous pouvez aussi les utiliser séparément et avec d’autre outils mais ils forment une pile de bout en bout qui offre une analyse de données dont des logs en temps réel afin de fournir des informations exploitables à partir de presque tout type de source de données structurée et non structurée. 
+On verra plus tard que chaque élément joue un rôle important. Ils peuvent être utilisés pour des projets simples ou complexe car ils prennent en charge des opérations avance et simple.
+Il est important de dissocier le rôle de ces 3 outils afin de mieux comprendre le rôle et la communication de l'ensemble de ces composants :
+-	__Elasticsearch__ : prend en charge de l'indexation et du stockage de vos informations sur une base de données NoSQL qui est basé sur le moteur de recherche Apache Lucene et il est construit pour fournir des APIS rest. 
+Il est facile simple et fiable. Il propose également des requêtes avancées pour effectuer une analyse détaillée et stocke toutes les données de manière centralisée. Il est également utilisé sur de nombreux projets hors la suite ELK car il permet d'exécuter une recherche rapide des documents.
+-	__Logstash__ : l’outil d'intégration de données open source qui permet de collecter des données à partir d'une variété de sources, de les filtrer, les transformer et de les envoyer à la destination souhaitée (ex: Elasticsearch). Son but est de rassembler et conformer des données provenant de différentes sources et de les rendre disponibles pour une utilisation ultérieure.
+-	__Kibana__ : outil de visualisation de données qui complète la pile ELK , c'est une couche de visualisation qui fonctionne au-dessus d'Elasticsearch, CA donne a l’utilisateurs la possibilité d'analyser et de visualiser les données récupérées Elasticsearch. C'est un outil puissant offrant pour vos tableaux de bord divers diagrammes interactifs, données géographiques et graphiques pour visualiser les données les plus complexes. Donne un tableau de bord très complet pour visualiser rapidement des données qui peuvent être complexes
+  
 
-En effet, les outils : Elasticsearch, Logstash et Kibana, lorsqu'ils sont utilisés ensemble (car oui on peut les utiliser séparément ou avec d'autres technologies), forment une pile de bout en bout offrant une analyse de données dont des logs en temps réel afin de fournir des informations exploitables à partir de presque tout type de source de données structurée et non structurée. Vous comprendrez plus tard que chacun de ces produits joue un rôle différent dans vos analyses. Ils peuvent être utilisés pour des projets simples ou complexe car ils prennent en charge des opérations simples et avancées.
-cela correspond parfaitement a notre projet et il est aussi énormément utilisé en entreprise 
+cela correspond parfaitement a notre projet et il est aussi énormément utilisé en entreprise comme : 
+- NetFlix s'appuie fortement sur la pile ELK. L'entreprise utilise la pile ELK pour surveiller et analyser les logs de sécurité des opérations du service client. Il leur permet d'indexer, de stocker et de rechercher des documents à partir de plus de quinze clusters qui comprennent près de 800 nœuds.
+- Ou linkedIn utilise la pile ELK pour surveiller leurs performances et leur sécurité. L'équipe informatique a intégré ELK à Kafka pour comprendre leur charge en temps réel. Leur opération ELK comprend plus de 100 clusters dans six datacenters différents.
+
+![image](https://user-images.githubusercontent.com/86321847/159126602-37123771-39a4-4174-a9db-89c6b7a24c95.png)
+
 
 Heureusement, il existe de très bonnes images Docker prêtes à l'emploi pour Elasticsearch et Kibana, utilisons-les pour économiser du temps et des efforts. Ces images sont conservées par Idriss Neumann et sont disponibles ici : https://gitlab.comwork.io/oss/elasticstack/elasticstack-arm
 
