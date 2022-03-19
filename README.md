@@ -398,7 +398,9 @@ Mais qu’est ce que ELK , ELK est un acronyme upour décrire une pile qui compr
 -	 Elasticsearch
 -	 Logstash 
 -	 Kibana
-   
+     
+     
+     
 C’est la principal source de gestion des logs pour les entreprises qui souhaitent bénéficier des avantages d'une solution de journalisation centralisée.
 En effet, les outils : Elasticsearch, Logstash et Kibana, lorsqu'ils sont utilisés ensemble car vous pouvez aussi les utiliser séparément et avec d’autre outils mais ils forment une pile de bout en bout qui offre une analyse de données dont des logs en temps réel afin de fournir des informations exploitables à partir de presque tout type de source de données structurée et non structurée. 
 On verra plus tard que chaque élément joue un rôle important. Ils peuvent être utilisés pour des projets simples ou complexe car ils prennent en charge des opérations avance et simple.
@@ -410,12 +412,11 @@ Il est facile simple et fiable. Il propose également des requêtes avancées po
    
    
 
-
+   
 Cela correspond parfaitement a notre projet et il est aussi énormément utilisé en entreprise comme : 
 - NetFlix s'appuie fortement sur la pile ELK. L'entreprise utilise la pile ELK pour surveiller et analyser les logs de sécurité des opérations du service client. Il leur permet d'indexer, de stocker et de rechercher des documents à partir de plus de quinze clusters qui comprennent près de 800 nœuds.
 - Ou linkedIn utilise la pile ELK pour surveiller leurs performances et leur sécurité. L'équipe informatique a intégré ELK à Kafka pour comprendre leur charge en temps réel. Leur opération ELK comprend plus de 100 clusters dans six datacenters différents.
 
-![image](https://user-images.githubusercontent.com/86321847/159126602-37123771-39a4-4174-a9db-89c6b7a24c95.png)
 
 
 Heureusement, il existe de très bonnes images Docker prêtes à l'emploi pour Elasticsearch et Kibana, utilisons-les pour économiser du temps et des efforts. Ces images sont conservées par Idriss Neumann et sont disponibles ici : https://gitlab.comwork.io/oss/elasticstack/elasticstack-arm
