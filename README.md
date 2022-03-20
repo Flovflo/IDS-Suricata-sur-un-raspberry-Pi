@@ -275,10 +275,10 @@ __L'en-tête__ permet de définir le protocole (tcp, http, ftp, dns, tls...) ain
 __Les options__ de la règle sont indiquées entre parenthèses et séparées par des virgules. Certaines options ont des paramètres, qui sont spécifiés par leur mot clé, suivi de deux points et de la valeur du paramètre.
 Les règles sont identifiées par leur identifiant de signature, le paramètre sid.
 
-Par exemple:
+Par exemple:   
 drop tcp $HOME_NET any -> $EXTERNAL_NET any (msg:”ET TROJAN Likely Bot Nick in IRC (USA +..)”; flow:established,to_server; flowbits:isset,is_proto_irc; content:”NICK “; pcre:”/NICK .*USA.*[0-9]{3,}/i”; reference:url,doc.emergingthreats.net/2008124; classtype:trojan-activity; sid:2008124; rev:2;)
 
-__L’action__
+__L’action__   
 -	alerte - générer une alerte
 -	pass - arrête l'inspection ultérieure du paquet
 -	drop - supprime le paquet et génère une alerte (drop pour ici)
@@ -299,7 +299,7 @@ ou bien même des protocoles de couche application
 -	DNS
 Etc
 
-__La Source and destination__ ( $HOME_NET  $EXTERNAL_NET)
+__La Source and destination__ ( $HOME_NET  $EXTERNAL_NET).  
 Avec source et destination, vous spécifiez respectivement la source du trafic et la destination du trafic. Vous pouvez attribuer des adresses IP (IPv4 et IPv6 sont pris en charge) et des plages IP. Ceux-ci peuvent être combinés avec des opérateurs :
 
 ![image](https://user-images.githubusercontent.com/86321847/159169535-bb12bbda-f3ed-4af1-b844-8a542fb0ab18.png)
@@ -312,7 +312,7 @@ Par exemple :
 
 
 
-__Le Ports__ (source and destination) (any)
+__Le Ports__ (source and destination) (any).  
 Le trafic entre et sort par les ports. Différents ports ont des numéros de port différents. Par exemple, le port par défaut pour HTTP est 80 alors que 443 est généralement le port pour HTTPS. 
 
 Les ports mentionnés ci-dessus sont généralement les ports de destination. Les ports sources, c'est-à-dire l'application qui a envoyé le paquet, se voient généralement attribuer un port aléatoire par le système d'exploitation. 
@@ -322,12 +322,18 @@ Lors de la configuration des ports, vous pouvez également utiliser des opérate
 ![image](https://user-images.githubusercontent.com/86321847/159169497-f761a487-9317-40ef-b9d0-b16bdc016693.png)
 
 
-__La direction__ (->)
+__La direction__ (->).  
 
 La direction indique de quelle manière la signature doit correspondre. Presque chaque signature a une flèche vers la droite( ->). Cela signifie que seuls les paquets avec la même direction peuvent correspondre. Cependant, il est également possible qu'une règle corresponde dans les deux sens ( <>) :
 
 source -> destination
 source <> destination (les deux directions)
+
+   
+
+Pour finir les options
+Le reste de la règle se compose d'options. Ceux-ci sont entourés de parenthèses et séparés par des points-virgules. Certaines options ont des paramètres (tels que msg), qui sont spécifiés par le mot-clé de l'option, suivi de deux-points, suivi des paramètres. D'autres n'ont pas de paramètres et sont simplement le mot-clé (tel que nocase):
+![image](https://user-images.githubusercontent.com/86321847/159169667-9afb372f-f973-4b1b-9d9a-c127ca4449e3.png)
 
 
 
