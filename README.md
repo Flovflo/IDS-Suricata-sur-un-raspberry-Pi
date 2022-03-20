@@ -333,10 +333,6 @@ source <> destination (les deux directions)
 
 Pour finir les options
 Le reste de la règle se compose d'options. Ceux-ci sont entourés de parenthèses et séparés par des points-virgules. Certaines options ont des paramètres (tels que msg), qui sont spécifiés par le mot-clé de l'option, suivi de deux-points, suivi des paramètres. D'autres n'ont pas de paramètres et sont simplement le mot-clé (tel que nocase):
-![image](https://user-images.githubusercontent.com/86321847/159169667-9afb372f-f973-4b1b-9d9a-c127ca4449e3.png)
-
-
-
 
 
 
