@@ -615,7 +615,7 @@ Ok, maintenant tout devrait fonctionner à ce stade. Connectez-vous à Kibana à
 
 Maintenant pour avoir de beau visuel 
 
-j'utilse des template de https://github.com/StamusNetworks/KTS7
+j'utilse des templates de https://github.com/StamusNetworks/KTS7
 et avec ce template cela donne acces a 28 tableaux de bord pour Kibana 7.x et Elasticsearch 7.x à utiliser avec le système Suricata IDS/IPS/NSM - Détection des intrusions, prévention des intrusions et surveillance de la sécurité du réseau
   
   pour l'installer 
