@@ -264,23 +264,77 @@ on verifie que le service est bien lancer.
 Le service se lancera maintenant automatiquement au démarrage du Raspberry Pi.
 <h1> 4) Les Regles Suricata  </h1>
 Il faut à la fois éviter les faux positifs et s'assurer que les règles utilisées sont à jour et permettent la détection de menaces récentes.
-
-Les règles activées par défaut de Suricata génèrent de nombreux faux positifs (alertes qui ne sont pas de vrais problèmes).   Je recommande de laisser Suricata fonctionner pendant quelques heures avec une utilisation normale de vos appareils et, d'analyser finement les alertes dans le fichier "fast.log" puis de désactiver certaines règles.   Par exemple, si vous utilisez Dropbox ou Skype sur votre réseau, vous devrez désactiver les règles correspondantes afin de ne pas générer d'alertes inutiles pour votre réseau.
-
-Pour renforcer la sécurité de votre installation, vous devrez peut-être aussi ajouter de nouvelles sources de règles ou créer vos propres règles.
-Chaque règle Suricata suit le modèle suivant :
-
-+ action header options
-
+Les règles activées par défaut de Suricata génèrent de nombreux faux positifs (alertes qui ne sont pas de vrais problèmes). 
+Par exemple, si vous utilisez Dropbox ou Skype sur votre réseau, vous devrez désactiver les règles correspondantes afin de ne pas générer d'alertes inutiles pour votre réseau.
+Pour plus de sécurité de votre installation, vous pouvez ajouter de nouvelles sources de règles ou créer vos propres règles. Il est donc bon de savoir que chaque règle Suricata suit le modèle suivant :
+action l’en-tête options
 L'action correspond à l'action effectuée en cas de détection (alerte, abandon, passage...).
 
 L'en-tête permet de définir le protocole (tcp, http, ftp, dns, tls...) ainsi que l'adresse IP et le port de source et de destination du trafic concerné par l'alerte.
 
 Les options de la règle sont indiquées entre parenthèses et séparées par des virgules. Certaines options ont des paramètres, qui sont spécifiés par leur mot clé, suivi de deux points et de la valeur du paramètre.
-
 Les règles sont identifiées par leur identifiant de signature, le paramètre sid.
 
-Par exemple, voici la règle 2012647 relative à l'utilisation de Dropbox :
+Par exemple:
+drop tcp $HOME_NET any -> $EXTERNAL_NET any (msg:”ET TROJAN Likely Bot Nick in IRC (USA +..)”; flow:established,to_server; flowbits:isset,is_proto_irc; content:”NICK “; pcre:”/NICK .*USA.*[0-9]{3,}/i”; reference:url,doc.emergingthreats.net/2008124; classtype:trojan-activity; sid:2008124; rev:2;)
+
+L’action 
+-	alerte - générer une alerte
+-	pass - arrête l'inspection ultérieure du paquet
+-	drop - supprime le paquet et génère une alerte (drop pour ici)
+-	rejet - envoie l'erreur d'accès RST/ICMP à l'expéditeur du paquet correspondant.
+-	rejettesrc - identique à simplement rejeter
+-	rejettedst - envoie le paquet d'erreur RST/ICMP au récepteur du paquet correspondant.
+-	Rejectboth - envoyer des paquets d'erreur RST/ICMP aux deux côtés de la conversation.
+Dans l’en-tête,on peut y choisir :
+Le Protocol (tcp)
+Ce mot-clé dans une signature indique à Suricata de quel protocole il s'agit. Vous pouvez choisir entre quatre protocoles de base :
+-	TCP (pour le trafic TCP)
+-	UDP
+-	ICMP
+-	ip (ip signifie 'all' ou 'any')
+ou bien même des protocoles de couche application
+-	http
+-	ftp
+-	DNS
+Etc
+
+La Source and destination ( $HOME_NET  $EXTERNAL_NET)
+Avec source et destination, vous spécifiez respectivement la source du trafic et la destination du trafic. Vous pouvez attribuer des adresses IP (IPv4 et IPv6 sont pris en charge) et des plages IP. Ceux-ci peuvent être combinés avec des opérateurs :
+
+OPERATEUR	DESCRIPTION
+../..	IP ranges (CIDR notation)
+!	exception/negation
+[.., ..]	regroupement
+
+Normalement, vous utiliserez également des variables, telles que $HOME_NETet $EXTERNAL_NET. Le fichier de configuration spécifie les adresses IP concernées et ces paramètres seront utilisés à la place des variables dans vos règles. Voir Rule-vars pour plus d'informations.
+Par exemple :
+
+EXEMPLE	SIGNIFICATION
+! 1.1.1.1	Toutes les adresses IP sauf 1.1.1.1
+![1.1.1.1, 1.1.1.2]	Toutes les adresses IP sauf 1.1.1.1 et 1.1.1.2
+
+
+Le Ports (source and destination) (any)
+Le trafic entre et sort par les ports. Différents ports ont des numéros de port différents. Par exemple, le port par défaut pour HTTP est 80 alors que 443 est généralement le port pour HTTPS. 
+
+Les ports mentionnés ci-dessus sont généralement les ports de destination. Les ports sources, c'est-à-dire l'application qui a envoyé le paquet, se voient généralement attribuer un port aléatoire par le système d'exploitation. 
+
+Lors de la configuration des ports, vous pouvez également utiliser des opérateurs spéciaux, comme décrit ci-dessus. Des signes comme :
+
+OPERATEUR	DESCRIPTION
+:	port ranges
+!	exception/negation
+[.., ..]	regroupement
+
+La direction (->)
+
+La direction indique de quelle manière la signature doit correspondre. Presque chaque signature a une flèche vers la droite( ->). Cela signifie que seuls les paquets avec la même direction peuvent correspondre. Cependant, il est également possible qu'une règle corresponde dans les deux sens ( <>) :
+
+source -> destination
+source <> destination (les deux directions)
+
+
 
 
 
