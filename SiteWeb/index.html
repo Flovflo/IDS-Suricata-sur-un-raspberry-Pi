@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+	
+	<title>Coming Soon html5 template by GetTemplate</title>
+
+	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
+	
+	<!-- Bootstrap itself -->
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<!-- Icons -->
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"> 
+	<!-- Fonts -->
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700"> 
+	<!-- Custom styles -->
+	<link rel="stylesheet" href="assets/css/styles.css">
+
+	<!--[if lt IE 9]> <script src="assets/js/html5shiv.js"></script> <![endif]-->
+</head>
+
+<body>
+
+<!-- Header -->
+<header class="header">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-push-2 text-center">
+				<h1>Projet Tutoré</h1>
+				<h2>Arthur Sene & Florian Taffin</h2>
+				<p class="lead">
+					Voici une explication rapide de notre projet tutoré
+				</p>
+				
+				<p>Dans ce projet, nous devions apprendre à utiliser un IDS/IPS qui est Suricata.<br>
+					On va vous montrer à travers ce site les différentes procédures.</p>
+					<br>
+				<p>Ici se trouve une représentation de notre utilisation de Suricata</br>
+					Mettez votre souris sur l'image pour la voir entièrement</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<div id="illustration">
+					<img src="assets/images/suricata1.png" alt="" >
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<!-- /Header -->
+	
+
+<!-- Content -->
+<main class="content">
+
+	<!-- Lead -->
+	<section class="container space-before space-after">
+		<div class="row">
+			<div class="col-sm-10 col-sm-push-1">
+				<h1 class="text-center">1) Prerequis</h1>
+			</div>
+		</div>
+	</section>
+	<!-- /Lead -->
+
+
+
+	<!-- Features -->
+	<section class="container space-before">
+		
+		<div class="row featurelist space-after">
+			<div class="col-md-5 col-sm-6 col-md-push-1 ">
+				<img class="img-feature img-responsive" src="assets/images/suricata2.png" alt="Sample image">
+			</div>
+			<div class="col-md-5 col-md-push-1 col-sm-6">
+				<h2 class="space-before">C'est quoi Suricata ?</h2>
+				<p>Suricata est un système de détection d'intrusion (IDS) réseau (network-based) et un système de prévention d'intrusion (IPS) open source. Site: https://suricata.io/
+					Pourquoi utilise des systèmes IDS / IPS Un réseau d'entreprise typique possède plusieurs points d'accès à d'autres réseaux, notamment des réseaux publics et des réseaux privés. L'enjeu est d'assurer la sécurité de ces réseaux tout en les gardant ouverts aux clients. Les attaques d'aujourd'hui sont si complexes qu'elles peuvent contourner les meilleurs systèmes de sécurité, en particulier ceux qui ne sont protégés que par un cryptage ou des pare-feu. Malheureusement, ces technologies ne peuvent à elles seules empêcher les attaques d'aujourd'hui.</p>
+			</div>
+		</div>
+		<div class="row featurelist space-after">
+			<div class="col-md-5 col-sm-6 col-sm-push-6">
+			</div>
+			<div class="col-md-5 col-sm-6 col-md-pull-4 col-sm-pull-6">
+				<h2 class="space-before">Qu’est ce que IDS/IPS ?</h2>
+				<p>IDS est un système de détection d'intrusion et IPS un système de prévention d’instruction. Les deux comparent les paquets du réseau à une base de données contenant des signatures connues de cyberattaques. La plus grosse différence entre les deux est que l’IPS est un système de contrôle alors que l’IDS est un système de surveillance. Sois IDS (Intrusion Detection Systems) : surveille et analyse le trafic pour vérifier que les paquets ne sont pas vérolés selon une base de données connue. Ils comparent aussi l’activité réseau en cours avec une base de données et les scanners de port. Pour IPS (Intrusion Prevention Systems) : il n’agit pas sur le réseau, mais entre le monde extérieur et le réseau interne. ll y en a deux type, soit HIDS (basé sur l'hôte) ou NIDS (base sur le réseau ). </p>
+			</div>
+		</div>
+
+		<div class="row featurelist space-after">
+			<div class="col-md-5 col-sm-6 col-sm-push-6">
+				<img class="img-feature img-responsive" src="assets/images/suricata3.png" alt="Sample image">
+			</div>
+			<div class="col-md-5 col-sm-6 col-md-pull-4 col-sm-pull-6">
+				<h2 class="space-before">Quelle sont les différences entre HIDS et NIDS ?</h2>
+				<p>HIDS - Host Based: Soit HIDS est un système de détection d'intrusion basé sur l'hôte , il est capable de surveiller et d'analyser les éléments internes d'un système informatique ainsi que les paquets réseau sur ses interfaces réseau, comme un système de détection d'intrusion basé sur le réseau (NIDS) fonctionne Les systèmes de détection d'intrusion basés sur l'hôte aident à surveiller les processus et les applications s'exécutant sur des appareils tels que des serveurs et des postes de travail. Les technologies HIDS sont « passive », ce qui signifie que leur objectif est d'identifier les activités suspectes et non de les empêcher. Pour obtenir une visibilité plus approfondie de la sécurité, les systèmes de détection d'intrusion basés sur l'hôte sont généralement déployés parallèlement aux systèmes de détection d'intrusion basés sur le réseau et aux solutions SIEM, qui regroupent et analysent les événements de sécurité provenant de plusieurs sources. Les avantages : bien que les HID puissent sembler être une mauvaise solution, ils présentent au départ de nombreux avantages. Pour commencer, ils peuvent empêcher les attaques de faire des dégâts. Par exemple, si un fichier malveillant tente de réécrire un document, le HID lui coupera les droits et le mettra en quarantaine. Les systèmes de détection d'intrusion basés sur l'hôte peuvent protéger les ordinateurs portables et personnels chaque fois qu'ils sont retirée d'un réseau ou qu'ils se rendent sur le terrain. En bref, les HID constituent la dernière ligne de défense utilisée pour parer à certaines attaques qui sont manquées par les NID.</p>
+			</div>
+		</div>
+
+		<div class="row featurelist space-after">
+			<div class="col-md-5 col-sm-6 col-md-push-1 col-sm-6">
+				<img class="img-feature img-responsive" src="assets/images/suricata4.png" alt="Sample image">
+			</div>
+			<div class="col-md-5 col-md-push-1 col-sm-6">
+				<p>NIDS - Network Based: Un système de détection d'intrusion basé sur le réseau (NIDS) utilise des capteurs NIDS pour surveiller et analyser les comportements suspects et les menaces réelles dans le trafic réseau. Il analyse le contenu et les informations d'en-tête de tous les paquets de données transmis sur le réseau. Des capteurs NIDS sont placés à des points clés du réseau pour vérifier le trafic de tous les appareils du réseau. Par exemple, les capteurs NIDS sont installés sur le même sous-réseau que le pare-feu pour détecter le déni de service (DoS) et d'autres attaques de ce type. les avantages : Les NID sont excellentes et ont la capacité de protéger d'innombrables dispositifs informatiques. C'est la meilleure option, qui est plus simple à déployer et moins coûteuse. Les NID fournissent également une évaluation plus large d'un grand réseau d'entreprise par le biais de scans et de sondes. En outre, les administrateurs sont en mesure de protéger d'autres dispositifs tels que les serveurs d'impression, les pare-feu, les routeurs et les concentrateurs VPN. Les NID sont flexibles avec plusieurs systèmes d'exploitation et dispositifs et protègent le réseau des inondations de bande passante ainsi que des attaques DoS.</p>
+			</div>
+		</div>
+
+		<div class="row featurelist space-after">
+			<div class="col-md-5 col-sm-6 col-sm-push-6">
+			</div>
+			<div class="col-md-5 col-sm-6 col-md-pull-4 col-sm-pull-6">
+				<h2 class="space-before">Qu'est-ce qu'un IPS ?</h2>
+				<p>Un IPS (Système de Prévention des Intrusions) est une sécurité pour repérer et réprimer les menaces déterminées. Les IPS inspectent et surveillent constamment notre réseau, analysent des comportements douteux malveillants et prennent en compte des informations à leur sujet. L’ IPS avertit ces incidents à l’administrateur système et prend des mesures défensives, comme l'arrêt du point d’accès et la reconfiguration du pare-feu pour détourner de futures attaques. Les solutions IPS peuvent en outre être utilisées pour déterminer les différents problèmes liés aux politiques de sécurité de l’entreprise pour empêcher les employés et les visiteurs de franchir les règles incluses dans les politiques.</p>
+			</div>
+		</div>
+
+		<div class="row featurelist space-after">
+			<div class="col-md-5 col-sm-6 col-md-push-1 col-sm-6">
+			</div>
+			<div class="col-md-5 col-md-push-1 col-sm-6">
+				<h2 class="space-before">Quelle est la différence entre un IDS et un IPS ?</h2>
+				<p>Examinons donc la différence entre IPS et IDS, la grande différence entre IPS et IDS réside dans l'action prise quand une potentielle menace est détecté. L’IPS (systèmes de prévention des intrusions) comme ils contrôlent l'accès au réseau informatique et peuvent, rejette des abus et des attaques. Ces systèmes sont créés pour observer les données intrusives et prendre des mesures pour empêcher les attaques de se produire. Au contraire, les IDS (systèmes de détection d'intrusion) ne sont pas conçus pour empêcher les attaques. Ils ne font que surveiller le réseau et envoient des alertes lorsqu'une menace potentielle est détectée, et donc IDS requière un Humain ou un autre système pour prendre la décision de filtre ou pas.</p>
+			</div>
+		</div>
+
+		<div class="row featurelist space-after">
+			<div class="col-md-5 col-sm-6 col-sm-push-6">
+			</div>
+			<div class="col-md-5 col-sm-6 col-md-pull-4 col-sm-pull-6">
+				<h2 class="space-before">Pourquoi utiliser suricata ?</h2>
+				<p>Premièrement, Suricate est open source donc gratuit, il gère aussi la détection d'intrusion (IDS), la prévention d'intrusion (IPS) mais surtout, il est très rapide et performant. De plus, il est assez simple à mettre en œuvre. Et il peut s'installer sur énormément d'appareils / d'écosystèmes. Même si Suricata a des concurrents comme Zeek , Sweet Security ou Snort, mais Suricata est gratuit et à une énorme communauté active donc les nouvelles informations sur les menaces sont souvent disponibles en premier dans un format compatible avec Suricata , de même si vous avez un problème il y a de fortes chances que quelqu'un d'autre a déjà eu ces problèmes et qu'il a donné la solution sur un forum sur Internet. C'est donc pour cela que nous choisissions Suricata.</p>
+			</div>
+		</div>
+		
+		<section class="container space-before space-after">
+			<div class="row">
+				<div class="col-sm-10 col-sm-push-1">
+					<h1 class="text-center">2) Installation</h1>
+				</div>
+			</div>
+		</section>
+
+		<div class="row featurelist space-after">
+			<div class="col-md-5 col-sm-6 col-md-push-1 col-sm-6">
+				<img class="img-feature img-responsive" src="assets/images/suricata5.png" alt="Sample image">
+			</div>
+			<div class="col-md-5 col-md-push-1 col-sm-6">
+				<h2 class="space-before">Installation de Raspbian Lite</h2>
+				<p>Pour commencer, nous installons un OS sur le raspberry pi. Nous choisissons donc raspbian car c'est la distribution la plus adaptée pour raspberry pi, et nous prenons la version light car nous n'avons pas besoin d'interface graphique et aussi pour éviter de consommer de l'énergie et des ressources.
+					Je télécharge l'instaleur raspbian sur le site de la fondation Raspberrry .
+					
+					Ensuite après que l’ISO est téléchargé , je l'installe sur une micro SD avec balenaEtcher .
+					
+					Mais d'abord avant d'insérer la carte SD dans le raspberry pi, je vais créer un fichier et ssh dans le dossier boot de la carte SD pour que le SSH soit activé (pour ne pas devoir brancher un écran et un clavier au raspberry pi et devoir l'activer manuellement)</p>
+			</div>
+		</div>
+
+		<div class="row featurelist space-after">
+			<div class="col-md-5 col-sm-6 col-sm-push-6">
+				<img class="img-feature img-responsive" src="assets/images/s7.png" alt="Sample image">
+			</div>
+			<div class="col-md-5 col-sm-6 col-md-pull-4 col-sm-pull-6">
+				<h2 class="space-before"></h2>
+				<p>Je peux donc maintenant mettre la carte SD dans le raspberry pi , attendre quelques minutes qu'il démarre et aller sur l'interface d'administration de ma box pour trouver l'adresse IP assignée au raspberry pi.</p>
+			</div>
+		</div>
+
+		<div class="row featurelist space-after">
+			<div class="col-md-5 col-sm-6 col-md-push-1 col-sm-6">
+				<img class="img-feature img-responsive" src="assets/images/s8.png" alt="Sample image">
+			</div>
+			<div class="col-md-5 col-md-push-1 col-sm-6">
+				<h2 class="space-before"></h2>
+				<p>Le IP privé de mon raspberry pi et donc 192.168.0.23 soite mje peux maintenant lancer une connexion ssh depuis mon ordinateur pour contrôler le raspberry pi.</p>
+			</div>
+		</div>
+
+		<div class="row featurelist space-after">
+			<div class="col-md-5 col-sm-6 col-sm-push-6">
+				
+			</div>
+			<div class="col-md-5 col-sm-6 col-md-pull-4 col-sm-pull-6">
+				<h2 class="space-before">2) Accès à distance</h2>
+				<p>Pour pouvoir accéder au raspberry pi depuis l'IUT et pour la configuration et par la suite la maintenance et la supervision, il est donc important de pouvoir avoir un accès au raspberry pi, mais de manière sécurisée, c'est pour cela que nous avons fait un vpn WIREGUARD pour avoir de très bonnes performances tout en restant très sécurisé. Nous sommes prêts à passer à l'étape 2.</p>
+			</div>
+		</div>
+
+		<section class="container space-before space-after">
+			<div class="row">
+				<div class="col-sm-10 col-sm-push-1">
+					<h1 class="text-center">4) Les Regles Suricata</h1>
+					<p>Il faut à la fois éviter les faux positifs et s'assurer que les règles utilisées sont à jour et permettent la détection de menaces récentes.
+						Les règles activées par défaut de Suricata génèrent de nombreux faux positifs (alertes qui ne sont pas de vrais problèmes). Je recommande de laisser Suricata fonctionner pendant quelques heures avec une utilisation normale de vos appareils et, d'analyser finement les alertes dans le fichier "fast.log" puis de désactiver certaines règles. Par exemple, si vous utilisez Dropbox ou Skype sur votre réseau, vous devrez désactiver les règles correspondantes afin de ne pas générer d'alertes inutiles pour votre réseau.
+						
+						Pour renforcer la sécurité de votre installation, vous devrez peut-être aussi ajouter de nouvelles sources de règles ou créer vos propres règles. Chaque règle Suricata suit le modèle suivant :
+						
+						action header options
+						L'action correspond à l'action effectuée en cas de détection (alerte, abandon, passage...).
+						
+						L'en-tête permet de définir le protocole (tcp, http, ftp, dns, tls...) ainsi que l'adresse IP et le port de source et de destination du trafic concerné par l'alerte.
+						
+						Les options de la règle sont indiquées entre parenthèses et séparées par des virgules. Certaines options ont des paramètres, qui sont spécifiés par leur mot clé, suivi de deux points et de la valeur du paramètre.
+						
+						Les règles sont identifiées par leur identifiant de signature, le paramètre sid.
+						
+						Par exemple, voici la règle 2012647 relative à l'utilisation de Dropbox :</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="container space-before space-after">
+			<div class="row">
+				<div class="col-sm-10 col-sm-push-1">
+					<h1 class="text-center">5) Exploiter les fichiers de logs</h1>
+					<p>Il enregistre le trafic réseau détecté et des activités suspectes, Suricata enregistre également des informations de service et des statistiques de trafic réseau. D’ailleurs, il faut faire attention, car ces logs prennent vite de la place, ils peuvent facilement remplir la carte sd sur raspberry pi et aussi un carte sd ne sont pas conçues pour des lectures, écritures intensives et elles peuvent échouer après un certain temps. Donc pour une raison de fiabilité et avoir un système de stockage et de sauvegarde performant, nous n’allons pas utiliser une carte sd.
+						Suricata enregistre 4 type de log :
+						<ul>
+						<li>suricata.log : messages de démarrage de Suricata</li>
+						<li>stats.log : statistiques sur le trafic réseau</li>
+						<li>fast.log : activités suspectes</li>
+						<li>eve.json : trafic de votre réseau local ainsi que les activités suspectes au format JSON</li>
+						</ul>
+						</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="container space-before space-after">
+			<div class="row">
+				<div class="col-sm-10 col-sm-push-1">
+					<h1 class="text-center">Gestion des fichiers de logs sur NAS</h1>
+					<p>Nous choisissions le nas pour une raison de fiabilité êtres sur de ne pas perdre les logs, mais vous pouvez très bien utiliser un disque dur externe branché en USB N’ayant pas de NAS à disposition, j’utilise une vm [https://xpenology.club/](xpenology) pour simuler un nas synology pour ce faire nous allons monter un système de fichiers distant sur le Pi à l'aide d'iSCSI. creer une cible iscsi sur le NAS synology.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="container space-before space-after">
+			<div class="row">
+				<div class="col-sm-10 col-sm-push-1">
+					<h1 class="text-center">Proxmox</h1>
+					<p>N'ayant pas de NAS à la maison, mais un serveur, j'avais d'abord pensé et fait une VM avec XPEinology qui simulait donc un nas synology dans Virtual box mais cela consommer énormément de ressources pour un résultat très peu concluant et très instable. Nous avons donc choisi la solution de l'hyperviseur de type 1 Ce qui permet d'avoir une bien meilleure émulation, pouvoir le utilisation à distance et aussi surtout pour une question de sécurité il est très simple de faire des sauvegardes d'avoir des serveurs de réplication Nous avons donc choisi proxmox , mais proxmox, c’est quoi ? Proxmox (Proxmox Virtual Environment) est une solution de virtualisation basée sur Linux KVM (Debian 64 bits) qui permet la création de machines virtuelles de type OpenVZ et KVM. Il s'agit d'une solution de type bare metal (bare metal en français), au sens de tourner directement sur la machine, c'est-à-dire sans OS. Le nom signifie un hyperviseur de type 1 (également appelé natif), où un hyperviseur minimaliste simplifié et optimisé se comporte comme un moniteur qui démarre le matériel, se connecte à un réseau et démarre une machine virtuelle. Le serveur ESX de VMware, le LPAR d'IBM ou Hyper-V de Microsoft sont des hyperviseurs de type 1. Proxmox est géré via une interface web (https://serverur_proxmox:8006) et fournit une vue d'ensemble de toutes les VM installées. En plus de cette interface web, des scripts peuvent être créés pour automatiser certaines tâches et il est totalement gratuit. Donc je pars prendre ma clé téléchargée l'iso sur le site officiel et commencer à booster mon serveur sur la clé usb, je suis bien l'installation ensuite l'installation finie mon serveur démarre sur proxmox , il m'invite à aller sur l'interface web https://192.3168.0.45:8006, Je m'y rends et on me demande mon nom et mot de passe je me log donc en root</p>
+				</div>
+				<img class="img-feature img-responsive" src="assets/images/s9.png" alt="Sample image">
+				<p>D'ailleurs pour des soucis d'énergie comme c'était un ordinateur portable l'écran reste en permanence allumé et si je rappelle capot l'ordinateur se met en veille donc pour contrer ce problème voici la commande : systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+
+					Je configure simplement et je me lance dans l'installation de la VM Je commence part téléchargé et uplaod les fichiers de conf https://drive.google.com/drive/folders/120qSow3L5XTYqhO3AkgngmBEXv3x0LTj Puis je crée ma vm et je poursuis l’installation après que tout soit fini, je peux avoir accès a l’interface graphique.</p>
+
+					<img class="img-feature img-responsive" src="assets/images/s10.png" alt="Sample image">
+					<img class="img-feature img-responsive" src="assets/images/s11.png" alt="Sample image">
+				<div class="col-sm-10 col-sm-push-1">
+					<p>Je prends en main le interface et installe le service iscsi</p>
+					<img class="img-feature img-responsive" src="assets/images/s12.png" alt="Sample image">
+					<img class="img-feature img-responsive" src="assets/images/s13.png" alt="Sample image">
+					<img class="img-feature img-responsive" src="assets/images/s14.png" alt="Sample image">
+					<img class="img-feature img-responsive" src="assets/images/s15.png" alt="Sample image">
+					Ensuite j'install et demarre le service iscsi sur le raspberry
+				</div>
+			</div>
+		</section>
+
+		<section class="container space-before space-after">
+			<div class="row">
+				<div class="col-sm-10 col-sm-push-1">
+					<h1 class="text-center">6) Installation d'une interface graphique</h1>
+				</div>
+			</div>
+		</section>
+
+		<div class="row featurelist space-after">
+			<div class="col-md-5 col-sm-6 col-md-push-1 ">
+				<img class="img-feature img-responsive" src="assets/images/suricata2.png" alt="Sample image">
+			</div>
+			<div class="col-md-5 col-md-push-1 col-sm-6">
+				<h2 class="space-before">Installation ELK</h2>
+				<p>Maintenant que nous avons des alertes de journalisation Suricata, concentrons-nous sur l'extrémité destinataire. Nous devons configurer le moteur Elasticsearch qui ingérera et indexera les alertes et Kibana qui sera utilisé pour visualiser les alertes, construire de beaux écrans de tableau de bord, etc.
+
+					Nous allons donc utiliser ELK Mais qu’est ce que ELK , ELK est un acronyme upour décrire une pile qui comprend trois projets open source:
+					<ul>
+					<li>Elasticsearch</li>
+					<li>Logstash</li>
+					<li>Kibana</li>
+				</ul></p>
+			</div>
+		</div>
+
+		<div class="row featurelist space-after">
+			<div class="col-md-5 col-sm-6 col-sm-push-6">
+			</div>
+			<div class="col-md-5 col-sm-6 col-md-pull-4 col-sm-pull-6">
+				<h2 class="space-before"></h2>
+				<p>C’est la principal source de gestion des logs pour les entreprises qui souhaitent bénéficier des avantages d'une solution de journalisation centralisée. En effet, les outils : Elasticsearch, Logstash et Kibana, lorsqu'ils sont utilisés ensemble car vous pouvez aussi les utiliser séparément et avec d’autre outils mais ils forment une pile de bout en bout qui offre une analyse de données dont des logs en temps réel afin de fournir des informations exploitables à partir de presque tout type de source de données structurée et non structurée. On verra plus tard que chaque élément joue un rôle important. Ils peuvent être utilisés pour des projets simples ou complexe car ils prennent en charge des opérations avance et simple. Il est important de dissocier le rôle de ces 3 outils afin de mieux comprendre le rôle et la communication de l'ensemble de ces composants : 
+				<ul>
+					<li>Elasticsearch : prend en charge de l'indexation et du stockage de vos informations sur une base de données NoSQL qui est basé sur le moteur de recherche Apache Lucene et il est construit pour fournir des APIS rest. Il est facile simple et fiable. Il propose également des requêtes avancées pour effectuer une analyse détaillée et stocke toutes les données de manière centralisée. Il est également utilisé sur de nombreux projets hors la suite ELK car il permet d'exécuter une recherche rapide des documents.</li>
+					<br>
+					<li>Logstash : l’outil d'intégration de données open source qui permet de collecter des données à partir d'une variété de sources, de les filtrer, les transformer et de les envoyer à la destination souhaitée (ex: Elasticsearch). Son but est de rassembler et conformer des données provenant de différentes sources et de les rendre disponibles pour une utilisation ultérieure.</li>
+					<br>
+					<li>Kibana : outil de visualisation de données qui complète la pile ELK , c'est une couche de visualisation qui fonctionne au-dessus d'Elasticsearch, CA donne a l’utilisateurs la possibilité d'analyser et de visualiser les données récupérées Elasticsearch. C'est un outil puissant offrant pour vos tableaux de bord divers diagrammes interactifs, données géographiques et graphiques pour visualiser les données les plus complexes. Donne un tableau de bord très complet pour visualiser rapidement des données qui peuvent être complexes</li>
+					<br>
+					<p>Cela correspond parfaitement a notre projet et il est aussi énormément utilisé en entreprise comme :
+						<ul>
+							<li>NetFlix s'appuie fortement sur la pile ELK. L'entreprise utilise la pile ELK pour surveiller et analyser les logs de sécurité des opérations du service client. Il leur permet d'indexer, de stocker et de rechercher des documents à partir de plus de quinze clusters qui comprennent près de 800 nœuds.</li>
+							<br>
+							<li>Ou linkedIn utilise la pile ELK pour surveiller leurs performances et leur sécurité. L'équipe informatique a intégré ELK à Kafka pour comprendre leur charge en temps réel. Leur opération ELK comprend plus de 100 clusters dans six datacenters différents.</li>
+
+						</ul>
+					</p>
+				</ul>
+				</p>
+			</div>
+		</div>
+		<section class="container space-before space-after">
+			<div class="row">
+				<div class="col-sm-10 col-sm-push-1">
+					<p>Heureusement, il existe de très bonnes images Docker prêtes à l'emploi pour Elasticsearch et Kibana, utilisons-les pour économiser du temps et des efforts. Ces images sont conservées par Idriss Neumann et sont disponibles ici : <a>https://gitlab.comwork.io/oss/elasticstack/elasticstack-arm</a></p>
+				</div>
+			</div>
+		</section>
+	</section>
+	
+	<!-- /Features -->
+
+</main>
+
+
+<footer id="footer" class="jumbotron">
+
+</footer>
+
+<p class="small text-muted text-center">Copyright &copy; 2022, Arthur Sene & Florian Taffin.</p>
+<br>
+
+
+
+<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="assets/js/template.js"></script>
+
+</body>
+</html>
