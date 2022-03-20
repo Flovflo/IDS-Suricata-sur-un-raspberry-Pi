@@ -668,7 +668,8 @@ Créez un fichier de configuration de l'analyseur : ```nano /etc/td-agent-bit/pa
   ```
 Tout est terminé , je peux démarrer le deamon Fluent Bit  ``` service td-agent-bit start ```
 
-Ok, maintenant tout devrait fonctionner à ce stade. Connectez-vous à Kibana à l'adresse http://192.168.0.23:5601 et utilisez la fonction Discover pour afficher votre index Logstash et toutes les données poussées de Logstash vers Elasticsearch.
+Maintenant tout devrait fonctionner à ce stade. Je me connect à Kibana à l'adresse http://192.168.0.23:5601 et utilisez la fonction Discover pour afficher votre index Logstash et toutes les données poussées de Logstash vers Elasticsearch.
+
 
 Maintenant pour avoir de beau visuel 
 
