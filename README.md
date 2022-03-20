@@ -268,17 +268,17 @@ Les règles activées par défaut de Suricata génèrent de nombreux faux positi
 Par exemple, si vous utilisez Dropbox ou Skype sur votre réseau, vous devrez désactiver les règles correspondantes afin de ne pas générer d'alertes inutiles pour votre réseau.
 Pour plus de sécurité de votre installation, vous pouvez ajouter de nouvelles sources de règles ou créer vos propres règles. Il est donc bon de savoir que chaque règle Suricata suit le modèle suivant :
 action l’en-tête options
-L'action correspond à l'action effectuée en cas de détection (alerte, abandon, passage...).
+__L'action__ correspond à l'action effectuée en cas de détection (alerte, abandon, passage...).
 
-L'en-tête permet de définir le protocole (tcp, http, ftp, dns, tls...) ainsi que l'adresse IP et le port de source et de destination du trafic concerné par l'alerte.
+__L'en-tête__ permet de définir le protocole (tcp, http, ftp, dns, tls...) ainsi que l'adresse IP et le port de source et de destination du trafic concerné par l'alerte.
 
-Les options de la règle sont indiquées entre parenthèses et séparées par des virgules. Certaines options ont des paramètres, qui sont spécifiés par leur mot clé, suivi de deux points et de la valeur du paramètre.
+__Les options__ de la règle sont indiquées entre parenthèses et séparées par des virgules. Certaines options ont des paramètres, qui sont spécifiés par leur mot clé, suivi de deux points et de la valeur du paramètre.
 Les règles sont identifiées par leur identifiant de signature, le paramètre sid.
 
 Par exemple:
 drop tcp $HOME_NET any -> $EXTERNAL_NET any (msg:”ET TROJAN Likely Bot Nick in IRC (USA +..)”; flow:established,to_server; flowbits:isset,is_proto_irc; content:”NICK “; pcre:”/NICK .*USA.*[0-9]{3,}/i”; reference:url,doc.emergingthreats.net/2008124; classtype:trojan-activity; sid:2008124; rev:2;)
 
-L’action 
+__L’action__
 -	alerte - générer une alerte
 -	pass - arrête l'inspection ultérieure du paquet
 -	drop - supprime le paquet et génère une alerte (drop pour ici)
@@ -299,35 +299,30 @@ ou bien même des protocoles de couche application
 -	DNS
 Etc
 
-La Source and destination ( $HOME_NET  $EXTERNAL_NET)
+__La Source and destination__ ( $HOME_NET  $EXTERNAL_NET)
 Avec source et destination, vous spécifiez respectivement la source du trafic et la destination du trafic. Vous pouvez attribuer des adresses IP (IPv4 et IPv6 sont pris en charge) et des plages IP. Ceux-ci peuvent être combinés avec des opérateurs :
 
-OPERATEUR	DESCRIPTION
-../..	IP ranges (CIDR notation)
-!	exception/negation
-[.., ..]	regroupement
+![image](https://user-images.githubusercontent.com/86321847/159169535-bb12bbda-f3ed-4af1-b844-8a542fb0ab18.png)
+
 
 Normalement, vous utiliserez également des variables, telles que $HOME_NETet $EXTERNAL_NET. Le fichier de configuration spécifie les adresses IP concernées et ces paramètres seront utilisés à la place des variables dans vos règles. Voir Rule-vars pour plus d'informations.
 Par exemple :
 
-EXEMPLE	SIGNIFICATION
-! 1.1.1.1	Toutes les adresses IP sauf 1.1.1.1
-![1.1.1.1, 1.1.1.2]	Toutes les adresses IP sauf 1.1.1.1 et 1.1.1.2
+![image](https://user-images.githubusercontent.com/86321847/159169503-9bf3cfe2-c406-479b-94a8-c0e46ff2edb9.png)
 
 
-Le Ports (source and destination) (any)
+
+__Le Ports__ (source and destination) (any)
 Le trafic entre et sort par les ports. Différents ports ont des numéros de port différents. Par exemple, le port par défaut pour HTTP est 80 alors que 443 est généralement le port pour HTTPS. 
 
 Les ports mentionnés ci-dessus sont généralement les ports de destination. Les ports sources, c'est-à-dire l'application qui a envoyé le paquet, se voient généralement attribuer un port aléatoire par le système d'exploitation. 
 
 Lors de la configuration des ports, vous pouvez également utiliser des opérateurs spéciaux, comme décrit ci-dessus. Des signes comme :
 
-OPERATEUR	DESCRIPTION
-:	port ranges
-!	exception/negation
-[.., ..]	regroupement
+![image](https://user-images.githubusercontent.com/86321847/159169497-f761a487-9317-40ef-b9d0-b16bdc016693.png)
 
-La direction (->)
+
+__La direction__ (->)
 
 La direction indique de quelle manière la signature doit correspondre. Presque chaque signature a une flèche vers la droite( ->). Cela signifie que seuls les paquets avec la même direction peuvent correspondre. Cependant, il est également possible qu'une règle corresponde dans les deux sens ( <>) :
 
