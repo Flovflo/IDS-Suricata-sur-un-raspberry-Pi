@@ -621,11 +621,11 @@ et avec ce template cela donne acces a 28 tableaux de bord pour Kibana 7.x et El
   pour l'installer 
   
 ```
-CD API-KIBANA7 curl -X POST "localhost:5601/api/saved_objects/_import" -H 'kbn-xsrf: true' --form file=@index-pattern.ndjson curl -X POST "localhost:5601/api/saved_objects/_import" -H 'kbn-xsrf: true' --form file=@search.ndjson curl -X POST "192.168.0.23:5601/api/saved_objects/_import" -H 'kbn-xsrf: true' --form file=@visualization.ndjson curl -X POST "192.168.0.23:5601/api/saved_objects/_import" -H 'kbn-xsrf: true' --form file=@dashboard.ndjson curl -X POST "localhost:5601/api/saved_objects/_import" -H 'kbn-xsrf: true' --form file=@query.ndjson service de redémarrage de kibana
+CD API-KIBANA7 curl -X POST "192.168.0.23:5601/api/saved_objects/_import" -H 'kbn-xsrf: true' --form file=@index-pattern.ndjson curl -X POST "192.168.0.23:5601/api/saved_objects/_import" -H 'kbn-xsrf: true' --form file=@search.ndjson curl -X POST "192.168.0.23:5601/api/saved_objects/_import" -H 'kbn-xsrf: true' --form file=@visualization.ndjson curl -X POST "192.168.0.23:5601/api/saved_objects/_import" -H 'kbn-xsrf: true' --form file=@dashboard.ndjson curl -X POST "localhost:5601/api/saved_objects/_import" -H 'kbn-xsrf: true' --form file=@query.ndjson service de redémarrage de kibana
 ```
   et
 ```
-  CD API-KIBANA7 curl -X POST "localhost:5601/api/saved_objects/_import? overwrite=true" -H 'kbn-xsrf: true' --form file=@index-pattern.ndjson curl -X POST "localhost:5601/api/saved_objects/_import? overwrite=true" -H 'kbn-xsrf: true' --form file=@search.ndjson curl -X POST "192.168.0.23:5601/api/saved_objects/_import? overwrite=true" -H 'kbn-xsrf: true' --form file=@visualization.ndjson curl -X POST "192.168.0.23:5601/api/saved_objects/_import? overwrite=true" -H 'kbn-xsrf: true' --form file=@dashboard.ndjson curl -X POST "192.168.0.23:5601/api/saved_objects/_import? overwrite=true" -H 'kbn-xsrf: true' --form file=@query.ndjson service de redémarrage de kibana
+  CD API-KIBANA7 curl -X POST "192.168.0.23:5601/api/saved_objects/_import? overwrite=true" -H 'kbn-xsrf: true' --form file=@index-pattern.ndjson curl -X POST "192.168.0.23:5601/api/saved_objects/_import? overwrite=true" -H 'kbn-xsrf: true' --form file=@search.ndjson curl -X POST "192.168.0.23:5601/api/saved_objects/_import? overwrite=true" -H 'kbn-xsrf: true' --form file=@visualization.ndjson curl -X POST "192.168.0.23:5601/api/saved_objects/_import? overwrite=true" -H 'kbn-xsrf: true' --form file=@dashboard.ndjson curl -X POST "192.168.0.23:5601/api/saved_objects/_import? overwrite=true" -H 'kbn-xsrf: true' --form file=@query.ndjson service de redémarrage de kibana
 ```
 
 et voila notre système est opérationnel 
