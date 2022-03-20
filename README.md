@@ -534,10 +534,15 @@ Bravo, maintenant le moteur Kibana fonctionne correctement et il est connecté a
 
   
   <h1> 7) Installation Fluent Bit </h1>
-Fluent Bit comblera le fossé entre les producteurs de grumes (Suricata) et les consommateurs de grumes (ElasticSearch et Kibana). Entre les deux, Fluent Bit va enrichir les logs avec la géolocalisation des adresses IP pour pouvoir visualiser la source ou la destination des paquets ayant déclenché l'alerte sur une carte du monde.
+Malheureusement la suite ELK est très gourmande en ram et n'ayant qu'un raspberry pi 3B+ qui n’a que 1go de ram et Fluent Bit car il est le plus léger en termes d'utilisation de la mémoire (-200/300 Mo par rapport à Logstash basé sur Java)
+Il est donc impossible de faire tourner Logstash en plus des deux autres, soit
+Fluent Bit fera le pont entre le producteur de logs (Suricata) et les consommateurs de logs (ElasticSearch et Kibana). Entre les deux, Fluent Bit enrichira les logs avec la géolocalisation des adresses IP pour pouvoir visualiser sur une carte du monde les origines ou destinations des paquets déclenchant des alertes, etc.
 
-On a opté pour Fluent Bit car il est le plus léger en termes d'utilisation de la mémoire (-200/300 Mo par rapport à Logstash basé sur Java), un peu plus convivial pour le processeur, et a également utilisé une base de données GeoLiteCity2 plus précise et à jour que dans ma précédente itération basée sur Logstash de l'ancienne base de données GeoLiteCity.
+
+Nous allons télécharger la carte de GeoLiteCity en suivant cette procédure 
+https://docs.fluentbit.io/manual/installation/linux/raspbian-raspberry-pi.
 Pour commencer, nous devons ajouter un nouveau dépôt APT pour en extraire le paquet :
+
   ```
  curl https://packages.fluentbit.io/fluentbit.key | sudo apt-key add - 
   ```
