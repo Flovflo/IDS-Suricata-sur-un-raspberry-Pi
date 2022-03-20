@@ -615,6 +615,19 @@ Ok, maintenant tout devrait fonctionner à ce stade. Connectez-vous à Kibana à
 Avec la commande  ```curl 3wzn5p2yiumh7akj.onion ```  vous verrez un avertissement apparaître dans Kibana.
 Je vais maintenant créer un tableau de bord ( les alertes de la journée en cours, les alertes des 30 derniers jours et les signes d'alerte les plus courants).
 
+j'utilse des template de https://github.com/StamusNetworks/KTS7
+et avec ce template cela donne acces a 28 tableaux de bord pour Kibana 7.x et Elasticsearch 7.x à utiliser avec le système Suricata IDS/IPS/NSM - Détection des intrusions, prévention des intrusions et surveillance de la sécurité du réseau
+  
+  pour l'installer 
+  
+```
+CD API-KIBANA7 curl -X POST "localhost:5601/api/saved_objects/_import" -H 'kbn-xsrf: true' --form file=@index-pattern.ndjson curl -X POST "localhost:5601/api/saved_objects/_import" -H 'kbn-xsrf: true' --form file=@search.ndjson curl -X POST "192.168.0.23:5601/api/saved_objects/_import" -H 'kbn-xsrf: true' --form file=@visualization.ndjson curl -X POST "192.168.0.23:5601/api/saved_objects/_import" -H 'kbn-xsrf: true' --form file=@dashboard.ndjson curl -X POST "localhost:5601/api/saved_objects/_import" -H 'kbn-xsrf: true' --form file=@query.ndjson service de redémarrage de kibana
+```
+  et
+```
+  CD API-KIBANA7 curl -X POST "localhost:5601/api/saved_objects/_import? overwrite=true" -H 'kbn-xsrf: true' --form file=@index-pattern.ndjson curl -X POST "localhost:5601/api/saved_objects/_import? overwrite=true" -H 'kbn-xsrf: true' --form file=@search.ndjson curl -X POST "192.168.0.23:5601/api/saved_objects/_import? overwrite=true" -H 'kbn-xsrf: true' --form file=@visualization.ndjson curl -X POST "192.168.0.23:5601/api/saved_objects/_import? overwrite=true" -H 'kbn-xsrf: true' --form file=@dashboard.ndjson curl -X POST "192.168.0.23:5601/api/saved_objects/_import? overwrite=true" -H 'kbn-xsrf: true' --form file=@query.ndjson service de redémarrage de kibana
+```
+
 
 
 
