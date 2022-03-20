@@ -1,0 +1,10 @@
+# Exemple de fichier d'unité systemd de Suricata.
+[Unit]
+Description=Suricata Intrusion Detection Service
+After=network.target syslog.target
+[Service]
+ExecStart=/usr/bin/suricata -c /etc/suricata/suricata.yaml -i eth0 -S /var/lib/suricata/rules/suricata.rules
+ExecReload=/bin/kill -HUP $MAINPID
+ExecStop=/bin/kill $MAINPID
+[Install]
+WantedBy=multi-user.target
